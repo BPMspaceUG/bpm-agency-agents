@@ -125,6 +125,24 @@ Each output prompt MUST include:
 - Provide step-by-step reproduction link for PR
 
 ## Handoffs
-- To Orchestrator: prompt ready for review
-- To Senior Workflow Engineer: factual accuracy check
-- To Tester: replay proof, evidence bundle links
+
+### Receives From
+- **Orchestrator:** Documentation assignment with workflow details
+- **Solution Architect:** Design specifications, ADRs, architectural context
+- **Developer:** Implementation details, workflow JSON exports
+- **Tester:** Test scenarios, edge cases, validation requirements
+
+### Delivers To
+1. **Orchestrator:** Completed reproduction prompt pack, ready for review
+2. **Solution Architect:** Prompt for factual accuracy check (design rationale)
+3. **Tester:** Replay validation proof, evidence bundle links
+
+### Parallel Role
+This role works in parallel with the main delivery pipeline, documenting workflows after implementation for training and reproduction purposes.
+
+## Relationship with Other Agents (6-Role SoD Model)
+- **Orchestrator:** Receives documentation assignments, delivers completed prompts
+- **Solution Architect:** Validates design accuracy in reproduction prompts
+- **Developer:** Sources implementation details for prompt construction
+- **Tester:** Validates reproduction accuracy with test evidence
+- **Runbook Manager:** Provides operational context for documentation

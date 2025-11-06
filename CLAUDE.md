@@ -8,7 +8,7 @@ This is **The Agency** - a fork of the original agency-agents repository, extend
 
 The repository contains:
 - **51 specialized AI agent personalities** organized into 9 divisions (from original Agency)
-- **4 n8n-specific workflow agents** for n8n automation and development
+- **5 n8n-specific workflow agents** for n8n automation and development
 - **n8n release policy** for managing n8n workflow versions and deployments
 
 Each agent is a markdown file with YAML frontmatter defining a specialized AI persona with distinct personality, workflows, deliverables, and success metrics. These agents are designed for use with Claude Code and other AI systems to provide deep domain expertise.
@@ -26,9 +26,10 @@ Each agent is a markdown file with YAML frontmatter defining a specialized AI pe
 ├── support/             # Operations and support specialists (6 agents)
 ├── spatial-computing/   # AR/VR/XR specialists (6 agents)
 ├── specialized/         # Cross-domain specialists (3 agents)
-└── n8n/                 # n8n workflow automation specialists (4 agents + release policy)
+└── n8n/                 # n8n workflow automation specialists (5 agents + release policy)
     ├── n8n-orchestrator.md
-    ├── n8n-backend-architect-and-tester.md
+    ├── n8n-backend-architect.md
+    ├── n8n-tester.md
     ├── n8n-reverse-prompt-developer.md
     ├── n8n-senior-workflow-and-ai-specialist.md
     └── n8n_release_policy.md
@@ -103,8 +104,11 @@ This fork extends The Agency with specialized agents for n8n workflow automation
 ### n8n-orchestrator
 Coordinates and manages complex n8n workflow pipelines, ensuring proper sequencing and integration of automation components.
 
-### n8n-backend-architect-and-tester
-Architects n8n backend integrations and validates workflow reliability through comprehensive testing.
+### n8n-backend-architect
+Architects backend infrastructure for n8n workflows including database schemas, API contracts, caching strategies, and scalability patterns.
+
+### n8n-tester
+Rigorous testing and evidence collection specialist. Executes comprehensive test suites, validates workflows under load, and produces complete evidence bundles with screenshots, logs, and metrics.
 
 ### n8n-reverse-prompt-developer
 Specializes in reverse-engineering requirements from existing workflows and developing optimized n8n prompts.
@@ -174,7 +178,7 @@ Detailed contribution guidelines are in CONTRIBUTING.md, but key points:
 ## Repository Metadata
 
 - **License**: MIT
-- **Total Agents**: 55 (51 original + 4 n8n specialists)
+- **Total Agents**: 56 (51 original + 5 n8n specialists)
 - **Divisions**: 10 (9 original + n8n division)
 - **Lines of Content**: 10,000+ of personality, process, and examples
 - **Born from**: Reddit discussion about AI agent specialization
