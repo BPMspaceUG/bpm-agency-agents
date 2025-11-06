@@ -48,9 +48,10 @@ Each agent is:
 
 ```bash
 # Copy agents to your Claude Code directory
-cp -r agency-agents/* ~/.claude/agents/
+cp -r bpm-agency-agents/* ~/.claude/agents/
 
 # Now activate any agent in your Claude Code sessions:
+# "Hey Claude, activate n8n Orchestrator mode and coordinate this project"
 # "Hey Claude, activate n8n Solution Architect mode and design a user onboarding workflow"
 # "Hey Claude, activate n8n Developer mode and implement this workflow specification"
 # "Hey Claude, activate n8n Tester mode and validate this workflow with evidence"
