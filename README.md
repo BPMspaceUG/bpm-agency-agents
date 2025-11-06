@@ -133,6 +133,50 @@ Parallel: Reverse Prompt Developer (documents reproduction prompts)
 
 ---
 
+#### 📋 Production Workflow Coordination System
+
+**For production deployments**, this repository includes a complete **GitHub Issues-based coordination system** for managing agent handoffs and n8n workflows.
+
+**📖 [Complete System Documentation → WORKFLOW_COORDINATION.md](WORKFLOW_COORDINATION.md)**
+
+**Key Features:**
+- ✅ **GitHub Issues for task handoffs** - Each issue = 1 task for 1 agent
+- ✅ **Complete audit trail** - Every decision and handoff documented
+- ✅ **Dependency management** - Issue chains like `#45 → #46 → #47`
+- ✅ **Private repository for production** - Security and confidentiality
+- ✅ **n8n backup workflow** - Automatic Git synchronization
+- ✅ **MCP integration** - GitHub MCP + n8n MCP for automation
+
+**Quick Start:**
+```bash
+# 1. Create private workflow repository
+gh repo create company-workflows --private
+
+# 2. Configure issue labels (15 labels documented)
+gh label create "agent:orchestrator" --color "0052CC"
+
+# 3. Implement n8n backup workflow (architecture documented)
+# 4. Create first orchestrator issue and start pipeline
+```
+
+**System Architecture:**
+```
+Public Repo (bpm-agency-agents) → Agent Definitions
+    ↓
+Private Repo (company-workflows) → Production Workflows + Issues
+    ↓
+n8n Instance → Running Workflows + Auto-Backup
+```
+
+**See [WORKFLOW_COORDINATION.md](WORKFLOW_COORDINATION.md) for:**
+- Complete setup guide with code examples
+- Issue templates and best practices
+- n8n backup workflow architecture
+- MCP server integration examples
+- Orchestrator automation patterns
+
+---
+
 #### Role Responsibilities & Boundaries
 
 | Role | Allowed | Forbidden |
