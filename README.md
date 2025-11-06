@@ -51,7 +51,9 @@ Each agent is:
 cp -r agency-agents/* ~/.claude/agents/
 
 # Now activate any agent in your Claude Code sessions:
-# "Hey Claude, activate Frontend Developer mode and help me build a React component"
+# "Hey Claude, activate n8n Solution Architect mode and design a user onboarding workflow"
+# "Hey Claude, activate n8n Developer mode and implement this workflow specification"
+# "Hey Claude, activate n8n Tester mode and validate this workflow with evidence"
 ```
 
 ### Option 2: Use as Reference
