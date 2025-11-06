@@ -1,6 +1,8 @@
 # 🎭 The Agency: 55 AI Specialists Ready to Transform Your Workflow
 
-> **A complete AI agency at your fingertips** - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers, plus n8n workflow automation experts. Each agent is a specialized expert with personality, processes, and proven deliverables.
+> **A complete AI agency at your fingertips** - Specialized **n8n workflow automation agents** plus 51 expert specialists covering frontend development, marketing, testing, design, and more. Each agent is a specialized expert with personality, processes, and proven deliverables.
+>
+> **🎯 This Fork's Primary Focus**: Professional **n8n workflow automation specialists** for production-grade workflow development, testing, and AI integration.
 
 [![GitHub stars](https://img.shields.io/github/stars/msitarzewski/agency-agents?style=social)](https://github.com/msitarzewski/agency-agents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,7 +12,11 @@
 
 ## 🚀 What Is This?
 
-Born from a Reddit thread and months of iteration, **The Agency** is a collection of 55 meticulously crafted AI agent personalities. **This fork** extends the original with specialized **n8n workflow automation agents** and a dedicated release policy for managing n8n workflows.
+**The Agency** is a collection of 55 meticulously crafted AI agent personalities. **This fork exists primarily to provide professional n8n workflow automation specialists** - four dedicated agents plus a release policy for production-grade n8n workflow development, testing, and deployment.
+
+The fork includes the original 51 agents from [agency-agents](https://github.com/msitarzewski/agency-agents) plus:
+- **🔄 4 n8n Specialists**: Orchestrator, Backend Architect/Tester, Reverse Prompt Developer, and Senior Workflow & AI Specialist
+- **📋 n8n Release Policy**: Comprehensive versioning and deployment guidelines for n8n projects
 
 Each agent is:
 
@@ -163,9 +169,9 @@ The unique specialists who don't fit in a box.
 | 📊 [Data Analytics Reporter](specialized/data-analytics-reporter.md) | Business intelligence, data insights | Deep data analysis, business metrics, strategic insights |
 | 🔍 [LSP/Index Engineer](specialized/lsp-index-engineer.md) | Language Server Protocol, code intelligence | Code intelligence systems, LSP implementation, semantic indexing |
 
-### 🔄 n8n Division (4 Agents) **NEW**
+### 🔄 n8n Division (4 Agents) **⭐ PRIMARY FOCUS OF THIS FORK**
 
-Workflow automation specialists for n8n development and management.
+**Professional workflow automation specialists** for production-grade n8n development, testing, and AI integration.
 
 | Agent | Specialty | When to Use |
 |-------|-----------|-------------|
@@ -314,13 +320,13 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **55 Specialized Agents** across 10 divisions (51 original + 4 n8n)
-- 🔄 **n8n Division** - New workflow automation specialists
+- 🔄 **4 n8n Specialists** - **Primary purpose of this fork**: production-grade n8n automation
+- 📋 **n8n Release Policy** - Comprehensive workflow versioning and deployment guidelines
+- 🎭 **51 Additional Agents** - Complete agency from original repository
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
-- 💬 **50+ requests** in first 12 hours on Reddit
-- 🍴 **Fork extended** with n8n workflow management capabilities
+- 💬 **50+ requests** in first 12 hours on Reddit (original repository)
 
 ---
 
