@@ -10,7 +10,7 @@
 
 **This fork is built on the incredible work of [agency-agents](https://github.com/msitarzewski/agency-agents) by [@msitarzewski](https://github.com/msitarzewski).**
 
-🌟 **The original repository contains 51 meticulously crafted AI agent personalities** covering the full spectrum of software development, marketing, design, testing, and more. This fork is simply a **minimal add-on** providing 5 specialized n8n workflow automation agents.
+🌟 **The original repository contains 51 meticulously crafted AI agent personalities** covering the full spectrum of software development, marketing, design, testing, and more. This fork is simply a **minimal add-on** providing 6 specialized n8n workflow automation agents.
 
 **Please visit and star the original repository**: [github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
 
@@ -275,7 +275,7 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 🎉 **All credit for the 51 original agents, the agent design philosophy, and the entire Agency concept goes to the original repository.**
 
-This fork is simply a minimal add-on that extends that amazing work with 5 specialized n8n workflow automation agents. The core vision, structure, and 99% of the value comes from the original project.
+This fork is simply a minimal add-on that extends that amazing work with 6 specialized n8n workflow automation agents. The core vision, structure, and 99% of the value comes from the original project.
 
 ### Original Project Origins
 

@@ -8,7 +8,7 @@ This is **The Agency** - a fork of the original agency-agents repository, extend
 
 The repository contains:
 - **51 specialized AI agent personalities** organized into 9 divisions (from original Agency)
-- **5 n8n-specific workflow agents** for n8n automation and development
+- **6 n8n-specific workflow agents** for n8n automation and development
 - **n8n release policy** for managing n8n workflow versions and deployments
 
 Each agent is a markdown file with YAML frontmatter defining a specialized AI persona with distinct personality, workflows, deliverables, and success metrics. These agents are designed for use with Claude Code and other AI systems to provide deep domain expertise.
