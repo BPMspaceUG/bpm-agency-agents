@@ -41,6 +41,15 @@ company-workflows/
 │       ├── validate-n8n-workflows.yml
 │       └── issue-automation.yml
 ├── .claude/
+│   ├── agents/                    # Copied agent definitions
+│   │   ├── n8n/
+│   │   │   ├── n8n-orchestrator.md
+│   │   │   ├── n8n-solution-architect.md
+│   │   │   ├── n8n-developer.md
+│   │   │   ├── n8n-tester.md
+│   │   │   ├── n8n-reverse-prompt-developer.md
+│   │   │   └── n8n-runbook-rollout-manager.md
+│   │   └── [other agents as needed]
 │   └── mcp-servers/
 │       ├── github-mcp-config.json
 │       └── n8n-mcp-config.json
@@ -346,8 +355,13 @@ cd company-workflows
 # Initialize structure
 mkdir -p workflows/{customer-onboarding,data-processing,integrations}
 mkdir -p .github/workflows
-mkdir -p .claude/mcp-servers
+mkdir -p .claude/{agents,mcp-servers}
 mkdir -p docs
+
+# Copy agent definitions from public repo
+cp -r /path/to/bpm-agency-agents/n8n .claude/agents/
+# Optional: Copy other agents as needed
+# cp -r /path/to/bpm-agency-agents/{engineering,testing,design} .claude/agents/
 
 # Add README and templates
 cat > README.md << 'EOF'
@@ -356,10 +370,13 @@ cat > README.md << 'EOF'
 Private repository for production workflow management and agent coordination.
 
 **DO NOT** commit secrets or credentials. Use `.env.example` as template.
+
+## Agent Definitions
+Agent personalities are copied to `.claude/agents/` for local Claude Code integration.
 EOF
 
 git add .
-git commit -m "Initial repository structure"
+git commit -m "Initial repository structure with agent definitions"
 git push
 ```
 
