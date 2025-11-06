@@ -1,8 +1,20 @@
-# 🎭 The Agency: 55 AI Specialists Ready to Transform Your Workflow
+# 🔄 The n8n-Agency: 4 n8n AI Specialists (+51)
 
-> **A complete AI agency at your fingertips** - Specialized **n8n workflow automation agents** plus 51 expert specialists covering frontend development, marketing, testing, design, and more. Each agent is a specialized expert with personality, processes, and proven deliverables.
+> **Professional n8n workflow automation at your fingertips** - 4 specialized **n8n workflow automation agents** for production-grade development, testing, and AI integration. Plus 51 expert specialists from the original Agency repository covering frontend development, marketing, testing, design, and more.
 >
-> **🎯 This Fork's Primary Focus**: Professional **n8n workflow automation specialists** for production-grade workflow development, testing, and AI integration.
+> **🎯 This Fork's Primary Focus**: Professional **n8n workflow automation specialists** - everything else is bonus from the original repository.
+
+---
+
+## 🙏 Credits & Huge Thanks
+
+**This fork is built on the incredible work of [agency-agents](https://github.com/msitarzewski/agency-agents) by [@msitarzewski](https://github.com/msitarzewski).**
+
+🌟 **The original repository contains 51 meticulously crafted AI agent personalities** covering the full spectrum of software development, marketing, design, testing, and more. This fork is simply a **minimal add-on** providing 4 specialized n8n workflow automation agents.
+
+**Please visit and star the original repository**: [github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents)
+
+All credit for the foundational work, agent design philosophy, and the 51 original agents goes to the original author and community. This fork exists solely to extend that amazing foundation with n8n-specific automation specialists.
 
 [![GitHub stars](https://img.shields.io/github/stars/msitarzewski/agency-agents?style=social)](https://github.com/msitarzewski/agency-agents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -55,120 +67,6 @@ Browse the agents below and copy/adapt the ones you need!
 
 ## 🎨 The Agency Roster
 
-### 💻 Engineering Division (7 Agents)
-
-Building the future, one commit at a time.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🎨 [Frontend Developer](engineering/engineering-frontend-developer.md) | React/Vue/Angular, UI implementation, performance | Modern web apps, pixel-perfect UIs, Core Web Vitals optimization |
-| 🏗️ [Backend Architect](engineering/engineering-backend-architect.md) | API design, database architecture, scalability | Server-side systems, microservices, cloud infrastructure |
-| 📱 [Mobile App Builder](engineering/engineering-mobile-app-builder.md) | iOS/Android, React Native, Flutter | Native and cross-platform mobile applications |
-| 🤖 [AI Engineer](engineering/engineering-ai-engineer.md) | ML models, deployment, AI integration | Machine learning features, data pipelines, AI-powered apps |
-| 🚀 [DevOps Automator](engineering/engineering-devops-automator.md) | CI/CD, infrastructure automation, cloud ops | Pipeline development, deployment automation, monitoring |
-| ⚡ [Rapid Prototyper](engineering/engineering-rapid-prototyper.md) | Fast POC development, MVPs | Quick proof-of-concepts, hackathon projects, fast iteration |
-| 💎 [Senior Developer](engineering/engineering-senior-developer.md) | Laravel/Livewire, advanced patterns | Complex implementations, architecture decisions |
-
-### 🎨 Design Division (6 Agents)
-
-Making it beautiful, usable, and delightful.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🎯 [UI Designer](design/design-ui-designer.md) | Visual design, component libraries, design systems | Interface creation, brand consistency, component design |
-| 🔍 [UX Researcher](design/design-ux-researcher.md) | User testing, behavior analysis, research | Understanding users, usability testing, design insights |
-| 🏛️ [UX Architect](design/design-ux-architect.md) | Technical architecture, CSS systems, implementation | Developer-friendly foundations, implementation guidance |
-| 🎭 [Brand Guardian](design/design-brand-guardian.md) | Brand identity, consistency, positioning | Brand strategy, identity development, guidelines |
-| 📖 [Visual Storyteller](design/design-visual-storyteller.md) | Visual narratives, multimedia content | Compelling visual stories, brand storytelling |
-| ✨ [Whimsy Injector](design/design-whimsy-injector.md) | Personality, delight, playful interactions | Adding joy, micro-interactions, Easter eggs, brand personality |
-
-### 📢 Marketing Division (8 Agents)
-
-Growing your audience, one authentic interaction at a time.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🚀 [Growth Hacker](marketing/marketing-growth-hacker.md) | Rapid user acquisition, viral loops, experiments | Explosive growth, user acquisition, conversion optimization |
-| 📝 [Content Creator](marketing/marketing-content-creator.md) | Multi-platform content, editorial calendars | Content strategy, copywriting, brand storytelling |
-| 🐦 [Twitter Engager](marketing/marketing-twitter-engager.md) | Real-time engagement, thought leadership | Twitter strategy, LinkedIn campaigns, professional social |
-| 📱 [TikTok Strategist](marketing/marketing-tiktok-strategist.md) | Viral content, algorithm optimization | TikTok growth, viral content, Gen Z/Millennial audience |
-| 📸 [Instagram Curator](marketing/marketing-instagram-curator.md) | Visual storytelling, community building | Instagram strategy, aesthetic development, visual content |
-| 🤝 [Reddit Community Builder](marketing/marketing-reddit-community-builder.md) | Authentic engagement, value-driven content | Reddit strategy, community trust, authentic marketing |
-| 📱 [App Store Optimizer](marketing/marketing-app-store-optimizer.md) | ASO, conversion optimization, discoverability | App marketing, store optimization, app growth |
-| 🌐 [Social Media Strategist](marketing/marketing-social-media-strategist.md) | Cross-platform strategy, campaigns | Overall social strategy, multi-platform campaigns |
-
-### 📊 Product Division (3 Agents)
-
-Building the right thing at the right time.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🎯 [Sprint Prioritizer](product/product-sprint-prioritizer.md) | Agile planning, feature prioritization | Sprint planning, resource allocation, backlog management |
-| 🔍 [Trend Researcher](product/product-trend-researcher.md) | Market intelligence, competitive analysis | Market research, opportunity assessment, trend identification |
-| 💬 [Feedback Synthesizer](product/product-feedback-synthesizer.md) | User feedback analysis, insights extraction | Feedback analysis, user insights, product priorities |
-
-### 🎬 Project Management Division (5 Agents)
-
-Keeping the trains running on time (and under budget).
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🎬 [Studio Producer](project-management/project-management-studio-producer.md) | High-level orchestration, portfolio management | Multi-project oversight, strategic alignment, resource allocation |
-| 🐑 [Project Shepherd](project-management/project-management-project-shepherd.md) | Cross-functional coordination, timeline management | End-to-end project coordination, stakeholder management |
-| ⚙️ [Studio Operations](project-management/project-management-studio-operations.md) | Day-to-day efficiency, process optimization | Operational excellence, team support, productivity |
-| 🧪 [Experiment Tracker](project-management/project-management-experiment-tracker.md) | A/B tests, hypothesis validation | Experiment management, data-driven decisions, testing |
-| 👔 [Senior Project Manager](project-management/project-manager-senior.md) | Realistic scoping, task conversion | Converting specs to tasks, scope management |
-
-### 🧪 Testing Division (7 Agents)
-
-Breaking things so users don't have to.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 📸 [Evidence Collector](testing/testing-evidence-collector.md) | Screenshot-based QA, visual proof | UI testing, visual verification, bug documentation |
-| 🔍 [Reality Checker](testing/testing-reality-checker.md) | Evidence-based certification, quality gates | Production readiness, quality approval, release certification |
-| 📊 [Test Results Analyzer](testing/testing-test-results-analyzer.md) | Test evaluation, metrics analysis | Test output analysis, quality insights, coverage reporting |
-| ⚡ [Performance Benchmarker](testing/testing-performance-benchmarker.md) | Performance testing, optimization | Speed testing, load testing, performance tuning |
-| 🔌 [API Tester](testing/testing-api-tester.md) | API validation, integration testing | API testing, endpoint verification, integration QA |
-| 🛠️ [Tool Evaluator](testing/testing-tool-evaluator.md) | Technology assessment, tool selection | Evaluating tools, software recommendations, tech decisions |
-| 🔄 [Workflow Optimizer](testing/testing-workflow-optimizer.md) | Process analysis, workflow improvement | Process optimization, efficiency gains, automation opportunities |
-
-### 🛟 Support Division (6 Agents)
-
-The backbone of the operation.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 💬 [Support Responder](support/support-support-responder.md) | Customer service, issue resolution | Customer support, user experience, support operations |
-| 📊 [Analytics Reporter](support/support-analytics-reporter.md) | Data analysis, dashboards, insights | Business intelligence, KPI tracking, data visualization |
-| 💰 [Finance Tracker](support/support-finance-tracker.md) | Financial planning, budget management | Financial analysis, cash flow, business performance |
-| 🏗️ [Infrastructure Maintainer](support/support-infrastructure-maintainer.md) | System reliability, performance optimization | Infrastructure management, system operations, monitoring |
-| ⚖️ [Legal Compliance Checker](support/support-legal-compliance-checker.md) | Compliance, regulations, legal review | Legal compliance, regulatory requirements, risk management |
-| 📑 [Executive Summary Generator](support/support-executive-summary-generator.md) | C-suite communication, strategic summaries | Executive reporting, strategic communication, decision support |
-
-### 🥽 Spatial Computing Division (6 Agents)
-
-Building the immersive future.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🏗️ [XR Interface Architect](spatial-computing/xr-interface-architect.md) | Spatial interaction design, immersive UX | AR/VR/XR interface design, spatial computing UX |
-| 💻 [macOS Spatial/Metal Engineer](spatial-computing/macos-spatial-metal-engineer.md) | Swift, Metal, high-performance 3D | macOS spatial computing, Vision Pro native apps |
-| 🌐 [XR Immersive Developer](spatial-computing/xr-immersive-developer.md) | WebXR, browser-based AR/VR | Browser-based immersive experiences, WebXR apps |
-| 🎮 [XR Cockpit Interaction Specialist](spatial-computing/xr-cockpit-interaction-specialist.md) | Cockpit-based controls, immersive systems | Cockpit control systems, immersive control interfaces |
-| 🍎 [visionOS Spatial Engineer](spatial-computing/visionos-spatial-engineer.md) | Apple Vision Pro development | Vision Pro apps, spatial computing experiences |
-| 🔌 [Terminal Integration Specialist](spatial-computing/terminal-integration-specialist.md) | Terminal integration, command-line tools | CLI tools, terminal workflows, developer tools |
-
-### 🎯 Specialized Division (3 Agents)
-
-The unique specialists who don't fit in a box.
-
-| Agent | Specialty | When to Use |
-|-------|-----------|-------------|
-| 🎭 [Agents Orchestrator](specialized/agents-orchestrator.md) | Multi-agent coordination, workflow management | Complex projects requiring multiple agent coordination |
-| 📊 [Data Analytics Reporter](specialized/data-analytics-reporter.md) | Business intelligence, data insights | Deep data analysis, business metrics, strategic insights |
-| 🔍 [LSP/Index Engineer](specialized/lsp-index-engineer.md) | Language Server Protocol, code intelligence | Code intelligence systems, LSP implementation, semantic indexing |
-
 ### 🔄 n8n Division (4 Agents) **⭐ PRIMARY FOCUS OF THIS FORK**
 
 **Professional workflow automation specialists** for production-grade n8n development, testing, and AI integration.
@@ -184,58 +82,89 @@ The unique specialists who don't fit in a box.
 
 ---
 
+### 🌟 The Original 51 Agents (From agency-agents)
+
+**This fork includes all 51 amazing agents from the original [agency-agents](https://github.com/msitarzewski/agency-agents) repository** by [@msitarzewski](https://github.com/msitarzewski).
+
+These agents span 9 divisions and cover the complete spectrum of software development, design, marketing, testing, project management, support, spatial computing, and specialized domains.
+
+**📖 [View the complete roster of all 51 agents here →](https://github.com/msitarzewski/agency-agents#-the-agency-roster)**
+
+All credit for these agents goes to the original repository and its community. The descriptions include:
+- **💻 Engineering Division** (7 agents): Frontend, Backend, Mobile, AI Engineer, DevOps, Rapid Prototyper, Senior Developer
+- **🎨 Design Division** (6 agents): UI Designer, UX Researcher, UX Architect, Brand Guardian, Visual Storyteller, Whimsy Injector
+- **📢 Marketing Division** (8 agents): Growth Hacker, Content Creator, Twitter Engager, TikTok Strategist, Instagram Curator, Reddit Community Builder, App Store Optimizer, Social Media Strategist
+- **📊 Product Division** (3 agents): Sprint Prioritizer, Trend Researcher, Feedback Synthesizer
+- **🎬 Project Management Division** (5 agents): Studio Producer, Project Shepherd, Studio Operations, Experiment Tracker, Senior Project Manager
+- **🧪 Testing Division** (7 agents): Evidence Collector, Reality Checker, Test Results Analyzer, Performance Benchmarker, API Tester, Tool Evaluator, Workflow Optimizer
+- **🛟 Support Division** (6 agents): Support Responder, Analytics Reporter, Finance Tracker, Infrastructure Maintainer, Legal Compliance Checker, Executive Summary Generator
+- **🥽 Spatial Computing Division** (6 agents): XR Interface Architect, macOS Spatial/Metal Engineer, XR Immersive Developer, XR Cockpit Interaction Specialist, visionOS Spatial Engineer, Terminal Integration Specialist
+- **🎯 Specialized Division** (3 agents): Agents Orchestrator, Data Analytics Reporter, LSP/Index Engineer
+
+**All agent files from the original repository are included in this fork** - you can find them in their respective directories.
+
+---
+
 ## 🎯 Real-World Use Cases
 
-### Scenario 1: Building a Startup MVP
+### 🔄 n8n Use Case 1: Debug, Fix, and Test Workflow Issues
 
-**Your Team**:
-1. 🎨 **Frontend Developer** - Build the React app
-2. 🏗️ **Backend Architect** - Design the API and database
-3. 🚀 **Growth Hacker** - Plan user acquisition
-4. ⚡ **Rapid Prototyper** - Fast iteration cycles
-5. 🔍 **Reality Checker** - Ensure quality before launch
+**Scenario**: You have a production n8n workflow that's failing intermittently, and you need to identify the issue, fix it, and validate the solution.
 
-**Result**: Ship faster with specialized expertise at every stage.
+**Your n8n Team**:
+1. 🚀 **n8n Senior Workflow & AI Specialist** - Analyze workflow logs, identify the problematic node(s), and diagnose the root cause (e.g., API timeout, data format mismatch, rate limiting)
+2. 🏗️ **n8n Backend Architect & Tester** - Modify the workflow to fix the issue (add error handling, implement retry logic, fix data transformation)
+3. 🏗️ **n8n Backend Architect & Tester** - Create comprehensive test scenarios and validate the fixed workflow under various conditions
+4. 🔍 **Reality Checker** (from original agency-agents) - Verify production readiness with evidence-based certification
 
----
-
-### Scenario 2: Marketing Campaign Launch
-
-**Your Team**:
-1. 📝 **Content Creator** - Develop campaign content
-2. 🐦 **Twitter Engager** - Twitter strategy and execution
-3. 📸 **Instagram Curator** - Visual content and stories
-4. 🤝 **Reddit Community Builder** - Authentic community engagement
-5. 📊 **Analytics Reporter** - Track and optimize performance
-
-**Result**: Multi-channel coordinated campaign with platform-specific expertise.
+**Result**: Systematically debugged and fixed n8n workflow with validated reliability and proper error handling.
 
 ---
 
-### Scenario 3: Enterprise Feature Development
+### 🔄 n8n Use Case 2: Reverse Engineer and Rebuild Workflow
 
-**Your Team**:
-1. 👔 **Senior Project Manager** - Scope and task planning
-2. 💎 **Senior Developer** - Complex implementation
-3. 🎨 **UI Designer** - Design system and components
-4. 🧪 **Experiment Tracker** - A/B test planning
-5. 📸 **Evidence Collector** - Quality verification
-6. 🔍 **Reality Checker** - Production readiness
+**Scenario**: You have an existing n8n workflow that was built ad-hoc without documentation. You need to understand what it does, create a proper specification, and rebuild it using best practices.
 
-**Result**: Enterprise-grade delivery with quality gates and documentation.
+**Your n8n Team**:
+1. 🔍 **n8n Reverse Prompt Developer** - Analyze the existing workflow structure, reverse engineer the business logic, and create a detailed prompt/specification describing what the workflow should accomplish
+2. 🎯 **n8n Orchestrator** - Use the generated prompt to design an optimized workflow architecture with proper error handling, modular structure, and scalability considerations
+3. 🚀 **n8n Senior Workflow & AI Specialist** - Implement the new workflow according to the prompt, incorporating AI enhancements and modern best practices
+4. 🏗️ **n8n Backend Architect & Tester** - Test the new implementation against the original workflow's output to ensure functional equivalency
+
+**Result**: Well-documented, optimized n8n workflow rebuilt from scratch with proper architecture and AI enhancements.
 
 ---
 
-### Scenario 4: n8n Workflow Automation 🆕
+### 🔄 n8n Use Case 3: Iterative Workflow Development with Validation Loop
 
-**Your Team**:
-1. 🎯 **n8n Orchestrator** - Design workflow architecture
-2. 🏗️ **n8n Backend Architect & Tester** - Implement and validate integrations
-3. 🚀 **n8n Senior Workflow & AI Specialist** - Add AI-powered automation
-4. 🔍 **Reality Checker** - Ensure production reliability
-5. 📊 **Analytics Reporter** - Monitor workflow performance
+**Scenario**: You're developing a complex new n8n workflow from requirements, and need to ensure the implementation matches specifications through iterative testing and refinement.
 
-**Result**: Robust, scalable n8n automation with AI integration and quality assurance.
+**Your n8n Team**:
+1. 🎯 **n8n Orchestrator** - Design initial workflow architecture from requirements
+2. 🚀 **n8n Senior Workflow & AI Specialist** - Implement the workflow with AI-powered components
+3. 🏗️ **n8n Backend Architect & Tester** - Execute comprehensive tests comparing actual output structure and data against expected results
+4. 🏗️ **n8n Backend Architect & Tester** - Analyze differences between expected and actual results, document discrepancies
+5. 🚀 **n8n Senior Workflow & AI Specialist** - Refine workflow based on test results
+6. **Loop**: Repeat steps 3-5 until output matches specifications exactly
+7. 🔍 **Reality Checker** (from original agency-agents) - Final production certification
+
+**Result**: Production-ready n8n workflow that precisely meets specifications, validated through systematic testing and iterative refinement.
+
+---
+
+### 💡 Additional Use Cases with Original Agents
+
+Want to see use cases for the other 51 agents (startup MVP development, marketing campaigns, enterprise features, etc.)?
+
+**📖 [View all use cases in the original repository →](https://github.com/msitarzewski/agency-agents#-real-world-use-cases)**
+
+These include scenarios for:
+- Building startup MVPs with Engineering agents
+- Marketing campaign launches with Marketing agents
+- Enterprise feature development with full QA pipeline
+- And many more specialized workflows
+
+**All credit for these use cases goes to [@msitarzewski](https://github.com/msitarzewski) and the [agency-agents](https://github.com/msitarzewski/agency-agents) community.**
 
 ---
 
@@ -320,13 +249,19 @@ Each agent is designed with:
 
 ## 📊 Stats
 
+### This Fork (n8n-Agency)
 - 🔄 **4 n8n Specialists** - **Primary purpose of this fork**: production-grade n8n automation
 - 📋 **n8n Release Policy** - Comprehensive workflow versioning and deployment guidelines
-- 🎭 **51 Additional Agents** - Complete agency from original repository
+- 🎯 **3 Real-World n8n Use Cases** - Debug/fix workflows, reverse engineering, iterative development
+
+### From Original agency-agents Repository
+- 🎭 **51 Specialized Agents** - Complete agency covering all domains (Engineering, Design, Marketing, Testing, Product, PM, Support, Spatial Computing, Specialized)
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
-- 💬 **50+ requests** in first 12 hours on Reddit (original repository)
+- 💬 **50+ requests** in first 12 hours on Reddit
+
+**Total: 55 AI Specialist Agents (4 n8n + 51 from original)**
 
 ---
 
@@ -350,9 +285,25 @@ MIT License - Use freely, commercially or personally. Attribution appreciated bu
 
 ## 🙏 Acknowledgments
 
-Born from a Reddit discussion about AI agent specialization. Thanks to the community for the feedback, requests, and inspiration.
+### 🌟 Huge Thanks to the Original Repository
 
-Special recognition to the 50+ Redditors who requested this within the first 12 hours - you proved there's demand for real, specialized AI agent systems.
+**This fork would not exist without the incredible foundation laid by [@msitarzewski](https://github.com/msitarzewski) and the [agency-agents](https://github.com/msitarzewski/agency-agents) community.**
+
+🎉 **All credit for the 51 original agents, the agent design philosophy, and the entire Agency concept goes to the original repository.**
+
+This fork is simply a minimal add-on that extends that amazing work with 4 specialized n8n workflow automation agents. The core vision, structure, and 99% of the value comes from the original project.
+
+### Original Project Origins
+
+Born from a Reddit discussion about AI agent specialization. Thanks to the community for the feedback, requests, and inspiration that led to the creation of the original 51 agents.
+
+Special recognition to the 50+ Redditors who requested the original project within the first 12 hours - you proved there's demand for real, specialized AI agent systems.
+
+### n8n Fork
+
+This n8n-focused fork was created to provide production-grade n8n workflow automation specialists, building on the solid foundation of the original Agency repository.
+
+**Please star the original repository**: [github.com/msitarzewski/agency-agents](https://github.com/msitarzewski/agency-agents) ⭐
 
 ---
 
@@ -377,10 +328,20 @@ Special recognition to the 50+ Redditors who requested this within the first 12 
 
 <div align="center">
 
-**🎭 The Agency: Your AI Dream Team Awaits 🎭**
+**🔄 The n8n-Agency: n8n Automation Specialists + Complete AI Dream Team 🔄**
 
-[⭐ Star this repo](https://github.com/msitarzewski/agency-agents) • [🍴 Fork it](https://github.com/msitarzewski/agency-agents/fork) • [🐛 Report an issue](https://github.com/msitarzewski/agency-agents/issues)
+### This Fork (n8n-Agency)
+[⭐ Star this n8n fork](https://github.com/BPMspaceUG/bpm-agency-agents) • [🐛 Report n8n-related issues](https://github.com/BPMspaceUG/bpm-agency-agents/issues)
+
+### Original Repository (agency-agents)
+**🌟 Please star the original repository that made this possible! 🌟**
+
+[⭐ Star original repo](https://github.com/msitarzewski/agency-agents) • [🍴 Fork original](https://github.com/msitarzewski/agency-agents/fork) • [💬 Discussions](https://github.com/msitarzewski/agency-agents/discussions)
+
+---
 
 Made with ❤️ by the community, for the community
+
+**n8n fork**: Built on the incredible foundation by [@msitarzewski](https://github.com/msitarzewski)
 
 </div>
