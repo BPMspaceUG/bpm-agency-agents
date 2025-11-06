@@ -41,7 +41,7 @@ company-workflows/
 │       ├── validate-n8n-workflows.yml
 │       └── issue-automation.yml
 ├── .claude/
-│   ├── agents/                    # Copied agent definitions
+│   ├── agents/                    # Git submodule → bpm-agency-agents (auto-updates!)
 │   │   ├── n8n/
 │   │   │   ├── n8n-orchestrator.md
 │   │   │   ├── n8n-solution-architect.md
@@ -49,7 +49,9 @@ company-workflows/
 │   │   │   ├── n8n-tester.md
 │   │   │   ├── n8n-reverse-prompt-developer.md
 │   │   │   └── n8n-runbook-rollout-manager.md
-│   │   └── [other agents as needed]
+│   │   ├── engineering/
+│   │   ├── testing/
+│   │   └── [all other agents from public repo]
 │   └── mcp-servers/
 │       ├── github-mcp-config.json
 │       └── n8n-mcp-config.json
@@ -63,7 +65,17 @@ company-workflows/
 │   ├── workflow-architecture.md
 │   └── agent-handoff-template.md
 ├── .env.example
+├── .gitmodules                    # Submodule config
 └── README.md
+```
+
+**Agent Updates:** When agents are updated in the public repo, simply run:
+```bash
+cd company-workflows
+git submodule update --remote .claude/agents
+git add .claude/agents
+git commit -m "Update agent definitions"
+# Restart Claude Code to reload agents
 ```
 
 ### 2. Required MCP Servers
@@ -343,6 +355,86 @@ Issue contains **reference** to workflow file, not full JSON.
 
 ---
 
+## Git Submodules vs. Copying: Why Submodules Are Better
+
+### ❌ Old Approach: Copying Agent Files
+```bash
+cp -r bpm-agency-agents/* company-workflows/.claude/agents/
+```
+
+**Problems:**
+- Manual updates required when agents change
+- Files drift out of sync
+- No version tracking between repos
+- Have to remember to re-copy after updates
+
+### ✅ New Approach: Git Submodules
+```bash
+git submodule add https://github.com/BPMspaceUG/bpm-agency-agents.git .claude/agents
+```
+
+**Benefits:**
+- ✅ **Automatic updates** - `git submodule update --remote`
+- ✅ **Always in sync** - Single source of truth
+- ✅ **Version tracking** - See exact agent version in use
+- ✅ **Easy rollback** - Checkout specific submodule commit
+- ✅ **No manual copying** - Git handles everything
+
+### How It Works
+
+**Initial Setup (once):**
+```bash
+cd company-workflows
+git submodule add https://github.com/BPMspaceUG/bpm-agency-agents.git .claude/agents
+git commit -m "Add agent definitions as submodule"
+git push
+```
+
+**Getting Agent Updates (whenever public repo updates):**
+```bash
+cd company-workflows
+git submodule update --remote .claude/agents
+git add .claude/agents
+git commit -m "Update agents to latest version"
+git push
+
+# Restart Claude Code to reload agents
+```
+
+**Team Collaboration:**
+When your team clones the private repo:
+```bash
+git clone https://github.com/company/company-workflows.git
+cd company-workflows
+git submodule update --init --recursive  # Auto-downloads agent definitions
+```
+
+**Checking Agent Version:**
+```bash
+cd .claude/agents
+git log -1  # See which commit/version is currently used
+```
+
+**Rolling Back to Previous Agent Version:**
+```bash
+cd .claude/agents
+git checkout <commit-hash>  # Use specific version
+cd ../..
+git add .claude/agents
+git commit -m "Rollback agents to stable version"
+```
+
+### Alternative: Symlinks (Local Development Only)
+
+If both repos are on the same machine and you're developing locally:
+```bash
+ln -s /home/rob/bpm-agency-agents .claude/agents
+```
+
+**⚠️ Warning:** Symlinks don't work across machines or in Git. Use submodules for team collaboration.
+
+---
+
 ## Implementation Steps
 
 ### Step 1: Create Private Workflow Repository
@@ -355,13 +447,20 @@ cd company-workflows
 # Initialize structure
 mkdir -p workflows/{customer-onboarding,data-processing,integrations}
 mkdir -p .github/workflows
-mkdir -p .claude/{agents,mcp-servers}
+mkdir -p .claude/mcp-servers
 mkdir -p docs
 
-# Copy agent definitions from public repo
-cp -r /path/to/bpm-agency-agents/n8n .claude/agents/
-# Optional: Copy other agents as needed
-# cp -r /path/to/bpm-agency-agents/{engineering,testing,design} .claude/agents/
+# Option A: Git Submodule (RECOMMENDED - automatic updates)
+# Link public agent repo as submodule
+git submodule add https://github.com/BPMspaceUG/bpm-agency-agents.git .claude/agents
+git submodule update --init --recursive
+
+# Option B: Symlink (if repos are on same machine)
+# ln -s /path/to/bpm-agency-agents .claude/agents
+
+# Now agents update automatically with:
+# git submodule update --remote .claude/agents
+# (then restart Claude Code)
 
 # Add README and templates
 cat > README.md << 'EOF'
@@ -372,7 +471,17 @@ Private repository for production workflow management and agent coordination.
 **DO NOT** commit secrets or credentials. Use `.env.example` as template.
 
 ## Agent Definitions
-Agent personalities are copied to `.claude/agents/` for local Claude Code integration.
+
+Agent personalities are linked via **Git Submodule** from the public `bpm-agency-agents` repository.
+
+**Updates are automatic:**
+```bash
+git submodule update --remote .claude/agents
+git commit -am "Update agent definitions"
+# Restart Claude Code
+```
+
+This ensures agents are always up-to-date without manual copying!
 EOF
 
 git add .
