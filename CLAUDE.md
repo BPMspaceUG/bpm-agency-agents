@@ -135,12 +135,29 @@ This system enables:
 - Automated workflow backup from n8n to Git
 - Issue-based orchestration (e.g., "complete issue #45, then #46, then #47")
 
+**Private Repository Structure:**
+
+The production workflows live in a **separate private repository** (NOT in this public repo):
+
+```
+company-workflows/              # Private repository
+├── .claude/
+│   └── agents/                # Git submodule → bpm-agency-agents
+├── workflows/                 # n8n workflow JSON files
+│   ├── n8n2github/           # MANDATORY: Automated workflow backup to Git
+│   ├── customer-onboarding/
+│   └── data-processing/
+└── docs/
+```
+
+**Note:** The `n8n2github` workflow is mandatory for automated backup. An example implementation will be provided soon (similar to how agent definitions are linked via Git submodule).
+
 **Quick Start:**
 ```bash
 # See WORKFLOW_COORDINATION.md for:
 # 1. Private repository setup
 # 2. GitHub Issue templates for agent coordination
-# 3. n8n backup workflow architecture
+# 3. n8n backup workflow architecture (n8n2github)
 # 4. MCP server integration examples
 ```
 

@@ -58,6 +58,7 @@ company-workflows/
 │   ├── agents/               # Git submodule → bpm-agency-agents
 │   └── mcp-servers/          # MCP configurations
 ├── workflows/                # n8n workflow JSON files
+│   ├── n8n2github/          # MANDATORY: Automated workflow backup to Git
 │   ├── customer-onboarding/
 │   └── data-processing/
 ├── docs/                     # Architecture docs
@@ -72,7 +73,7 @@ gh repo create company-workflows --private
 cd company-workflows
 
 # Setup structure
-mkdir -p workflows/{customer-onboarding,data-processing}
+mkdir -p workflows/{n8n2github,customer-onboarding,data-processing}
 mkdir -p .github/workflows
 mkdir -p .claude/mcp-servers
 mkdir -p docs
@@ -186,6 +187,8 @@ Orch   Arch   Dev   Test  Deploy
 
 **Automatic backup:** n8n → Git repository
 
+**Location:** `workflows/n8n2github/` (**MANDATORY**)
+
 **Trigger:** Schedule (every 6 hours) or manual
 
 **Process:**
@@ -196,6 +199,13 @@ Orch   Arch   Dev   Test  Deploy
 5. Comment on tracking issue
 
 **Implementation:** Use n8n MCP tools to build this workflow
+
+**Files in n8n2github directory:**
+- `n8n-backup-workflow.json` - Main backup workflow
+- `README.md` - Setup instructions and configuration
+- `config.example.json` - Example configuration
+
+**Note:** This workflow will be provided as an example to copy (similar to agent definitions via Git submodule). Check back soon for the reference implementation.
 
 ---
 
