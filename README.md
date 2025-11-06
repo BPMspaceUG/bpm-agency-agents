@@ -1,6 +1,6 @@
-# 🎭 The Agency: 51 AI Specialists Ready to Transform Your Workflow
+# 🎭 The Agency: 55 AI Specialists Ready to Transform Your Workflow
 
-> **A complete AI agency at your fingertips** - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.
+> **A complete AI agency at your fingertips** - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers, plus n8n workflow automation experts. Each agent is a specialized expert with personality, processes, and proven deliverables.
 
 [![GitHub stars](https://img.shields.io/github/stars/msitarzewski/agency-agents?style=social)](https://github.com/msitarzewski/agency-agents)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,7 +10,9 @@
 
 ## 🚀 What Is This?
 
-Born from a Reddit thread and months of iteration, **The Agency** is a collection of 51 meticulously crafted AI agent personalities. Each agent is:
+Born from a Reddit thread and months of iteration, **The Agency** is a collection of 55 meticulously crafted AI agent personalities. **This fork** extends the original with specialized **n8n workflow automation agents** and a dedicated release policy for managing n8n workflows.
+
+Each agent is:
 
 - **🎯 Specialized**: Deep expertise in their domain (not generic prompt templates)
 - **🧠 Personality-Driven**: Unique voice, communication style, and approach
@@ -161,6 +163,19 @@ The unique specialists who don't fit in a box.
 | 📊 [Data Analytics Reporter](specialized/data-analytics-reporter.md) | Business intelligence, data insights | Deep data analysis, business metrics, strategic insights |
 | 🔍 [LSP/Index Engineer](specialized/lsp-index-engineer.md) | Language Server Protocol, code intelligence | Code intelligence systems, LSP implementation, semantic indexing |
 
+### 🔄 n8n Division (4 Agents) **NEW**
+
+Workflow automation specialists for n8n development and management.
+
+| Agent | Specialty | When to Use |
+|-------|-----------|-------------|
+| 🎯 [n8n Orchestrator](n8n/n8n-orchestrator.md) | Complex workflow pipelines, component integration | Multi-step automation coordination, workflow architecture |
+| 🏗️ [n8n Backend Architect & Tester](n8n/n8n-backend-architect-and-tester.md) | Backend integrations, reliability testing | n8n API design, workflow validation, quality assurance |
+| 🔍 [n8n Reverse Prompt Developer](n8n/n8n-reverse-prompt-developer.md) | Requirement analysis, prompt optimization | Workflow analysis, prompt engineering, optimization |
+| 🚀 [n8n Senior Workflow & AI Specialist](n8n/n8n-senior-workflow-and-ai-specialist.md) | Advanced patterns, AI integrations | Complex workflows, AI-powered automation, best practices |
+
+**Release Policy**: See [n8n_release_policy.md](n8n/n8n_release_policy.md) for versioning and deployment guidelines.
+
 ---
 
 ## 🎯 Real-World Use Cases
@@ -202,6 +217,19 @@ The unique specialists who don't fit in a box.
 6. 🔍 **Reality Checker** - Production readiness
 
 **Result**: Enterprise-grade delivery with quality gates and documentation.
+
+---
+
+### Scenario 4: n8n Workflow Automation 🆕
+
+**Your Team**:
+1. 🎯 **n8n Orchestrator** - Design workflow architecture
+2. 🏗️ **n8n Backend Architect & Tester** - Implement and validate integrations
+3. 🚀 **n8n Senior Workflow & AI Specialist** - Add AI-powered automation
+4. 🔍 **Reality Checker** - Ensure production reliability
+5. 📊 **Analytics Reporter** - Monitor workflow performance
+
+**Result**: Robust, scalable n8n automation with AI integration and quality assurance.
 
 ---
 
@@ -286,11 +314,13 @@ Each agent is designed with:
 
 ## 📊 Stats
 
-- 🎭 **51 Specialized Agents** across 9 divisions
+- 🎭 **55 Specialized Agents** across 10 divisions (51 original + 4 n8n)
+- 🔄 **n8n Division** - New workflow automation specialists
 - 📝 **10,000+ lines** of personality, process, and code examples
 - ⏱️ **Months of iteration** from real-world usage
 - 🌟 **Battle-tested** in production environments
 - 💬 **50+ requests** in first 12 hours on Reddit
+- 🍴 **Fork extended** with n8n workflow management capabilities
 
 ---
 
