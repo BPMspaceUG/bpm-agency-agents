@@ -119,6 +119,31 @@ Expert in advanced n8n workflow patterns, AI integrations, and automation best p
 ### n8n Release Policy
 See `n8n/n8n_release_policy.md` for versioning, deployment, and workflow management guidelines specific to n8n automation projects.
 
+## Production Workflow Coordination
+
+For production deployments using n8n and agent coordination, see **`WORKFLOW_COORDINATION.md`** for the complete system architecture.
+
+**Key Concepts:**
+- **GitHub Issues** for agent task handoffs and tracking
+- **Private repository** for production workflows (security)
+- **n8n backup workflow** for automatic Git synchronization
+- **MCP servers** (GitHub + n8n) for seamless integration
+
+This system enables:
+- Complete audit trail of all agent decisions and handoffs
+- Dependency management between agent tasks
+- Automated workflow backup from n8n to Git
+- Issue-based orchestration (e.g., "complete issue #45, then #46, then #47")
+
+**Quick Start:**
+```bash
+# See WORKFLOW_COORDINATION.md for:
+# 1. Private repository setup
+# 2. GitHub Issue templates for agent coordination
+# 3. n8n backup workflow architecture
+# 4. MCP server integration examples
+```
+
 ## Working with Agent Files
 
 ### Adding New Agents
