@@ -1,10 +1,72 @@
 # N8N Workflow Release & Versioning Policy (Global Instruction)
 
+## ⚠️ CRITICAL: AGENTS MUST NEVER ACTIVATE WORKFLOWS
+
+**WORKFLOW ACTIVATION = PRODUCTION DEPLOYMENT**
+
+Only the **human user** may activate workflows. Agents are **FORBIDDEN** from activating workflows.
+
+**Why?** Activation means PRODUCTION. Once activated, workflows become immutable (Rule 2). This is a critical control point that requires human authorization.
+
+### Agent Responsibilities:
+- ✅ **Agents CAN:** Create workflows, test workflows, prepare workflows for activation
+- ❌ **Agents CANNOT:** Activate workflows, deactivate workflows, change workflow active status
+
+### When a workflow is ready for activation:
+1. Agent completes all work (implementation, testing, documentation)
+2. Agent reports: "Workflow [name] is ready for activation"
+3. Agent provides: Workflow ID, version number, test results, activation instructions
+4. **HUMAN USER decides** whether to activate
+5. **HUMAN USER performs** the activation manually
+
+**If asked to activate:** Respond with: *"I cannot activate workflows. Activation requires your manual approval because it means PRODUCTION deployment. Here are the activation instructions: [provide workflow ID and steps]"*
+
+---
+
+## ⚠️ CRITICAL: NO GOLD PLATING - IMPLEMENT ONLY WHAT IS SPECIFIED
+
+**FORBIDDEN:** Implementing features, optimizations, or functionality that is NOT explicitly specified or requested.
+
+Agents **MUST NEVER** add:
+- ❌ Features "that might be useful"
+- ❌ Optimizations not requested in specifications
+- ❌ "Best practices" not specified in requirements
+- ❌ Extra error handling beyond design specs
+- ❌ Additional validations not in specifications
+- ❌ Logging/monitoring beyond requirements
+- ❌ "Nice to have" improvements
+
+### The Rule: EXACTLY WHAT IS SPECIFIED - NO MORE, NO LESS
+
+**Solution Architects:** Design ONLY what is requested. No "future-proofing" unless explicitly required.
+
+**Developers:** Implement ONLY what is in the design specification. No creative additions.
+
+**Testers:** Validate ONLY what is specified. No testing of unspecified features.
+
+### Why This Rule Exists:
+1. **Scope Control:** Unspecified features create scope creep
+2. **Maintainability:** Extra features = extra bugs and maintenance burden
+3. **Auditability:** Only specified features can be properly tracked and audited
+4. **Cost Control:** Extra features cost time, money, and complexity
+
+### If You Want to Add Something:
+1. **STOP** - Do not implement
+2. **DOCUMENT** - Write down the proposed addition
+3. **ASK** - Request approval from Orchestrator or human user
+4. **WAIT** - Get explicit written approval before proceeding
+
+**If asked to add unspecified features:** Respond with: *"That feature is not in the current specification. I can document this as a proposed enhancement for future consideration, but I cannot implement it now without explicit approval and an updated specification."*
+
+---
+
 ## 1. Never replace a broken workflow by creating a completely new one
 If an existing workflow does not work correctly, it must be analyzed and improved, not replaced.
 
 ## 2. Once a workflow is activated, it becomes immutable
 Activated workflows are production, read-only, and must not be altered.
+
+**Activation = Production = Immutable**
 
 ## 3. All changes require a copy
 Create a copy of the active workflow and append a version number:
