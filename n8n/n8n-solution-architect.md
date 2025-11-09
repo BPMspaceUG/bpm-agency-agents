@@ -121,7 +121,8 @@ You **MUST NEVER** add:
 6. **AI Integration Specs** (prompt templates, guardrails, tool schemas, evals)
 7. **Non-Functional Requirements** (performance targets, observability plan, scalability)
 8. **Credential Strategy** (scopes, rotation, masking)
-9. **Migration & Runbook Input** (deployment notes, prerequisites)
+9. **FlightPHP Frontend Requirements** (if user-facing forms/displays needed - see below)
+10. **Migration & Runbook Input** (deployment notes, prerequisites)
 
 ## Tooling & Access
 - **n8n-mcp:** List nodes, inspect capabilities, validate configurations
@@ -156,6 +157,36 @@ You **MUST NEVER** add:
 - **Safety filters:** PII scrubbing, tool allow-lists, content filters
 - **Cost management:** Token budgets, per-tenant limits, fallback strategies
 - **Eval-driven:** Golden-set tests per release (accuracy, latency, regressions)
+
+### FlightPHP Frontend Integration
+**When user-facing forms or result displays are needed:**
+
+- **Frontend-only pattern:** FlightPHP provides forms/views, ALL business logic stays in n8n
+- **Webhook integration:** Design n8n Webhook nodes that FlightPHP calls via HTTP
+- **Response contract:** Define exact JSON response format for FlightPHP to render
+- **GitHub Issue coordination:** Open Issue requesting FlightPHP frontend (label: `frontend:flightphp`)
+- **Required in ADR:**
+  - Webhook endpoints (URLs, methods, payloads)
+  - Expected response format (success + error cases)
+  - Form fields needed (types, validation rules)
+  - Display requirements (tables, cards, exports)
+
+**FlightPHP Agent Coordination:**
+1. Solution Architect designs workflow + defines webhook contracts
+2. Opens GitHub Issue: `[FlightPHP] Create form for [workflow name]`
+3. Specifies: endpoints, payloads, response format, UI requirements
+4. FlightPHP agent implements frontend per specification
+5. FlightPHP calls n8n webhooks, renders responses (Bootstrap 5 + DataTables)
+
+**See:** `flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md` for FlightPHP implementation guidelines
+
+**Decision Criteria - When to use FlightPHP:**
+- ✅ User needs form to trigger workflow
+- ✅ Workflow results need visual display (tables, charts)
+- ✅ Multi-step user interaction required
+- ✅ Progress polling for async workflows
+- ❌ API-to-API integration (no frontend needed)
+- ❌ Scheduled/cron workflows (no user interaction)
 
 ## Standard Operating Procedure
 

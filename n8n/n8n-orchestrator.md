@@ -362,6 +362,69 @@ Comment on this issue with:
 
 **Labels:** `agent:reverse-prompt-developer`, `status:ready`, `priority:medium`, `type:documentation`
 
+---
+
+### Template 6: FlightPHP Frontend Issue (Optional - When User Interface Needed)
+```markdown
+## 🎯 Context
+[Copy context from orchestration issue]
+
+## 🧠 Your Mission
+Create FlightPHP frontend for [workflow name]:
+- Implement form to trigger n8n workflow
+- Display workflow results with DataTables
+- Handle success and error states
+- Follow FlightPHP agent guidelines
+
+## 📋 Parent Issues
+- Orchestration Issue: #[PARENT_ISSUE_NUMBER]
+- Design Specification: #[SOLUTION_ARCHITECT_ISSUE_NUMBER] (for webhook contracts)
+
+## 📝 Webhook Contracts (from Solution Architect)
+**Trigger Endpoint:** `https://n8n.example.com/webhook/[workflow-name]`
+**Method:** POST
+**Expected Payload:**
+```json
+{
+  "field1": "value1",
+  "field2": "value2"
+}
+```
+
+**Response Format:**
+```json
+{
+  "status": "success|error",
+  "data": { ... },
+  "message": "Human readable message"
+}
+```
+
+## 📊 Success Criteria
+- [ ] Form implemented with all required fields (Bootstrap 5)
+- [ ] Form validation working (client & server-side)
+- [ ] Successful workflow calls trigger and display results
+- [ ] Error handling displays user-friendly messages
+- [ ] Results displayed with DataTables (if applicable)
+- [ ] Shared header/footer partials included
+- [ ] No business logic in FlightPHP (all logic in n8n)
+- [ ] Complies with GLOBAL_INSTRUCTION_SYSTEM_RULES_ALL_PROJECTS.md
+
+## 🔄 Handoff Chain
+Parallel to main chain - can execute alongside Developer phase
+
+## 📝 Deliverables
+Comment on this issue with:
+1. Routes implemented (GET /path, POST /path)
+2. View files created (forms, results, errors)
+3. Screenshots of form and result display
+4. Test evidence (successful submission + error handling)
+```
+
+**Labels:** `frontend:flightphp`, `status:ready`, `priority:medium`, `type:frontend`
+
+**Note:** FlightPHP frontend is optional and only needed when users require web forms or visual displays. For API-to-API or scheduled workflows, no frontend is needed.
+
 ## Inputs
 - Business requirements and strategic goals
 - Stakeholder deadlines and constraints

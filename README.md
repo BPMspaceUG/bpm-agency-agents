@@ -84,7 +84,7 @@ User → FlightPHP Form → n8n Workflow → FlightPHP Result Display
 ## 🔄 Standard Handoff Chain
 
 ```
-n8n-orchestrator → n8n-backend-architect → n8n-developer → n8n-tester → Go/No-Go → n8n-runbook-rollout-manager
+n8n-orchestrator → n8n-solution-architect → n8n-developer → n8n-tester → Go/No-Go → n8n-runbook-rollout-manager
                                                                           │
                                                                           └─ NO → Back to n8n-developer
 ```
@@ -152,7 +152,7 @@ labels: agent:n8n-orchestrator, priority:high, type:n8n-workflow, status:ready
 4. Production deployment runbook
 
 ## 🔄 Handoff Chain
-**Current: n8n-orchestrator** → Next: #TBD (n8n-backend-architect)
+**Current: n8n-orchestrator** → Next: #TBD (n8n-solution-architect)
 
 ## 📊 Success Metrics
 - [ ] Workflow executes without errors
@@ -223,7 +223,7 @@ Clients receive timeout instead of proper error message.
 4. Updated workflow in production
 
 ## 🔄 Handoff Chain
-**Current: n8n-orchestrator** → Next: #TBD (n8n-backend-architect)
+**Current: n8n-orchestrator** → Next: #TBD (n8n-solution-architect)
 
 ## 📊 Success Metrics
 - [ ] Error path returns proper HTTP response (400/500)
@@ -295,7 +295,7 @@ Add Slack notification to sales channel when new customer completes onboarding.
 4. Error handling validation
 
 ## 🔄 Handoff Chain
-**Current: n8n-orchestrator** → Next: #TBD (n8n-backend-architect)
+**Current: n8n-orchestrator** → Next: #TBD (n8n-solution-architect)
 
 ## 📊 Success Metrics
 - [ ] Slack notification sent successfully
@@ -378,7 +378,7 @@ labels: agent:n8n-orchestrator, priority:medium, type:n8n-workflow, status:ready
 5. Production deployment runbook
 
 ## 🔄 Handoff Chain
-**Current: n8n-orchestrator** → Next: #TBD (n8n-backend-architect)
+**Current: n8n-orchestrator** → Next: #TBD (n8n-solution-architect)
 
 ## 📊 Success Metrics
 - [ ] Workflow processes Shopify orders correctly
@@ -405,7 +405,7 @@ If starting from external JSON/template:
 1. n8n-reverse-prompt-developer analyzes external workflow
 2. Documents structure, nodes, patterns
 3. Creates adaptation guide
-4. Hands off to n8n-backend-architect for redesign
+4. Hands off to n8n-solution-architect for redesign
 
 ---
 **Labels:** agent:n8n-orchestrator, priority:medium, type:n8n-workflow
@@ -420,7 +420,7 @@ If starting from external JSON/template:
 
 **Team:**
 1. **n8n-orchestrator** - Assign debugging task
-2. **n8n-backend-architect** - Analyze logs, design fix
+2. **n8n-solution-architect** - Analyze logs, design fix
 3. **n8n-developer** - Implement fix (V+1)
 4. **n8n-tester** - Validate with evidence
 5. **n8n-orchestrator** - Go/No-Go decision
@@ -436,7 +436,7 @@ If starting from external JSON/template:
 **Team:**
 1. **n8n-reverse-prompt-developer** - Analyze & document existing workflow
 2. **n8n-orchestrator** - Assign rebuild project
-3. **n8n-backend-architect** - Design optimized architecture
+3. **n8n-solution-architect** - Design optimized architecture
 4. **n8n-developer** - Implement new workflow
 5. **n8n-tester** - Validate functional equivalency
 6. **n8n-runbook-rollout-manager** - Deploy & monitor
@@ -450,7 +450,7 @@ If starting from external JSON/template:
 
 **Team:**
 1. **n8n-orchestrator** - Intake requirements
-2. **n8n-backend-architect** - Design architecture (Gate 1)
+2. **n8n-solution-architect** - Design architecture (Gate 1)
 3. **n8n-developer** - Implement specification (V+1)
 4. **n8n-tester** - Execute comprehensive tests
 5. **Iteration Loop** - n8n-developer fixes → n8n-tester validates (repeat until pass)

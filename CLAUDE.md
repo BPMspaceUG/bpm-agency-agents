@@ -29,7 +29,7 @@ Each agent is a markdown file with YAML frontmatter defining a specialized AI pe
 ├── specialized/         # Cross-domain specialists (3 agents)
 ├── n8n/                 # n8n workflow automation specialists (6 agents + docs)
 │   ├── n8n-orchestrator.md
-│   ├── n8n-backend-architect.md
+│   ├── n8n-solution-architect.md
 │   ├── n8n-developer.md
 │   ├── n8n-tester.md
 │   ├── n8n-reverse-prompt-developer.md
@@ -90,7 +90,7 @@ Use **n8n-specific agents** from the `n8n/` directory:
 |--------------|----------------|---------|
 | agents-orchestrator | **n8n-orchestrator** | n8n workflow coordination |
 | EvidenceQA | **n8n-tester** | n8n workflow testing |
-| Backend Architect | **n8n-backend-architect** | n8n infrastructure |
+| Backend Architect | **n8n-solution-architect** | n8n workflow architecture |
 | - | **n8n-senior-workflow-and-ai-specialist** | n8n AI integrations |
 | - | **n8n-reverse-prompt-developer** | n8n prompt engineering |
 
@@ -130,7 +130,7 @@ spawn agents-orchestrator to execute complete pipeline for project-specs/[projec
 ### n8n-orchestrator (n8n/n8n-orchestrator.md)
 **For n8n workflow projects only** - coordinates n8n automation pipelines:
 - Creates and monitors GitHub Issues for each task
-- Orchestrates n8n-backend-architect → n8n-senior-workflow-and-ai-specialist → n8n-tester
+- Orchestrates n8n-solution-architect → n8n-developer → n8n-tester
 - Ensures proper sequencing and integration of automation components
 - Makes Go/No-Go decisions based on n8n-tester evidence
 - **Each agent creates its own GitHub Issue** to document work
@@ -163,8 +163,8 @@ This fork extends The Agency with specialized agents for n8n workflow automation
 ### n8n-orchestrator
 Coordinates and manages complex n8n workflow pipelines, ensuring proper sequencing and integration of automation components.
 
-### n8n-backend-architect
-Architects backend infrastructure for n8n workflows including database schemas, API contracts, caching strategies, and scalability patterns.
+### n8n-solution-architect
+Architects complete n8n workflow solutions: business flow logic, technical architecture, data models, API contracts, AI integrations, error handling, observability, and scalability patterns.
 
 ### n8n-tester
 Rigorous testing and evidence collection specialist. Executes comprehensive test suites, validates workflows under load, and produces complete evidence bundles with screenshots, logs, and metrics.
@@ -296,21 +296,21 @@ agents-orchestrator (creates Issue #1)
 
 ```
 n8n-orchestrator (creates Issue #10)
-  → n8n-backend-architect (creates Issue #11 - analyzes requirements, proposes ADR)
-  → n8n-senior-workflow-and-ai-specialist (creates Issue #12 - implements workflow)
+  → n8n-solution-architect (creates Issue #11 - designs architecture, proposes ADR)
+  → n8n-developer (creates Issue #12 - implements workflow V+1)
   → n8n-tester (creates Issue #13 - validates with screenshots & evidence)
   → n8n-orchestrator (reviews Issue #13, Go/No-Go decision)
-  → Infrastructure Maintainer (creates Issue #14 - deploys to production)
+  → n8n-runbook-rollout-manager (creates Issue #14 - activates, monitors production)
 ```
 
 **Example n8n Workflow: Fix Webhook Response**
 ```
 n8n-orchestrator (Issue #20: "Fix customer webhook - missing response")
-  → n8n-backend-architect (Issue #21: "Analyze webhook structure, identify disconnected 'Respond to Webhook' node")
-  → n8n-senior-workflow-and-ai-specialist (Issue #22: "Implement fix: connect response node on all paths")
+  → n8n-solution-architect (Issue #21: "Analyze webhook structure, identify disconnected 'Respond to Webhook' node")
+  → n8n-developer (Issue #22: "Implement fix: connect response node on all paths")
   → n8n-tester (Issue #23: "Validate webhook with curl commands, screenshot both success/error paths")
   → n8n-orchestrator (reviews evidence, approves)
-  → Infrastructure Maintainer (Issue #24: "Document pattern, update production")
+  → n8n-runbook-rollout-manager (Issue #24: "Activate fixed workflow, monitor first 24h")
 ```
 
 ### Marketing Campaign
