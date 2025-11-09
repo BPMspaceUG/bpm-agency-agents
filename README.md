@@ -56,8 +56,8 @@ FlightPHP agents provide web frontends that integrate tightly with n8n workflows
 
 **Key Principles:**
 - **Frontend-only** - No business logic in PHP (all logic lives in n8n)
-- **Bootstrap 5** - All UI components and layouts
-- **DataTables** - All tabular result displays
+- **[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)** - All UI components and layouts
+- **[DataTables](https://datatables.net/)** - All tabular result displays
 - **KISS** - Keep It Simple, Stupid (minimal, auditable code)
 - **Shared Layout** - Mandatory header/footer partials across all pages
 - **Views Only** - No inline HTML in controllers

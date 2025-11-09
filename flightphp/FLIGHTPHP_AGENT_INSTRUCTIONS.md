@@ -224,11 +224,15 @@ views/partials/footer_specific.php (optional)
 
 ### 3.4 Framework Requirements
 
-**Use Bootstrap 5 for layout & components:**
-- https://getbootstrap.com/docs/5.0/getting-started/introduction/
+**Use [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for layout & components:**
+- All forms, buttons, cards, modals
+- Responsive grid system
+- Component library for consistent UI
 
-**Use DataTables for ALL tabular result views:**
-- https://datatables.net/download/
+**Use [DataTables](https://datatables.net/) for ALL tabular result views:**
+- [Download/Installation](https://datatables.net/download/)
+- Sorting, filtering, pagination out of the box
+- Export buttons (CSV, Excel, PDF)
 
 **JS:**
 - Only what is necessary (Bootstrap, DataTables, light glue code)
