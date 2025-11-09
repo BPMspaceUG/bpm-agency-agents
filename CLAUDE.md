@@ -74,25 +74,79 @@ color: colorname or "#hexcode"
 - Overly broad scope (jack-of-all-trades agents)
 - Theoretical approaches without practical testing
 
+## Agent Selection: n8n vs. General Projects
+
+**CRITICAL:** Choose the correct agent based on project type:
+
+### For n8n Workflow Projects
+Use **n8n-specific agents** from the `n8n/` directory:
+
+| General Agent | n8n Equivalent | Use For |
+|--------------|----------------|---------|
+| agents-orchestrator | **n8n-orchestrator** | n8n workflow coordination |
+| EvidenceQA | **n8n-tester** | n8n workflow testing |
+| Backend Architect | **n8n-backend-architect** | n8n infrastructure |
+| - | **n8n-senior-workflow-and-ai-specialist** | n8n AI integrations |
+| - | **n8n-reverse-prompt-developer** | n8n prompt engineering |
+
+### For General Software Projects
+Use **general agents** from other directories (engineering/, design/, testing/, etc.):
+- agents-orchestrator (specialized/)
+- EvidenceQA (testing/)
+- engineering-senior-developer
+- etc.
+
+**Example Commands:**
+```bash
+# n8n project
+spawn n8n-orchestrator to build customer onboarding workflow
+
+# General web project
+spawn agents-orchestrator to execute complete pipeline for project-specs/app-setup.md
+```
+
+---
+
 ## Key Agent Examples
 
 ### agents-orchestrator (specialized/agents-orchestrator.md)
-The pipeline manager that coordinates multiple agents through complete workflows:
+**For general software projects only** - coordinates complete development pipelines:
 - Orchestrates PM → ArchitectUX → [Dev ↔ QA Loop] → Integration
 - Implements task-by-task QA validation with automatic retries
 - Maximum 3 attempts per task before escalation
 - Only advances when quality gates pass
+- **Each agent creates its own GitHub Issue** to document work
 
 **Single command launch**:
 ```
 spawn agents-orchestrator to execute complete pipeline for project-specs/[project]-setup.md
 ```
 
+### n8n-orchestrator (n8n/n8n-orchestrator.md)
+**For n8n workflow projects only** - coordinates n8n automation pipelines:
+- Creates and monitors GitHub Issues for each task
+- Orchestrates n8n-backend-architect → n8n-senior-workflow-and-ai-specialist → n8n-tester
+- Ensures proper sequencing and integration of automation components
+- Makes Go/No-Go decisions based on n8n-tester evidence
+- **Each agent creates its own GitHub Issue** to document work
+
+**Single command launch**:
+```
+spawn n8n-orchestrator to build and deploy customer-webhook workflow
+```
+
 ### engineering-senior-developer
 Premium implementation specialist for Laravel/Livewire/FluxUI with advanced CSS and Three.js integration.
 
 ### EvidenceQA (testing/testing-evidence-collector.md)
-Screenshot-obsessed QA specialist that defaults to finding 3-5 issues and requires visual proof for everything.
+**For general software projects only** - screenshot-obsessed QA specialist that defaults to finding 3-5 issues and requires visual proof for everything.
+
+### n8n-tester (n8n/n8n-tester.md)
+**For n8n workflow projects only** - rigorous testing and evidence collection specialist:
+- Executes comprehensive test suites for n8n workflows
+- Validates workflows under load
+- Produces complete evidence bundles with screenshots, logs, and metrics
+- Creates GitHub Issue to document all test results
 
 ### testing-reality-checker
 Evidence-based certification that defaults to "NEEDS WORK" unless overwhelming proof demonstrates production readiness.
@@ -178,9 +232,40 @@ company-workflows/              # Private repository
 
 ## Common Agent Workflows
 
-### Development Pipeline (orchestrated)
+### General Software Development Pipeline
+**Agents:** agents-orchestrator (coordination) + general agents
+**Each agent creates its own GitHub Issue**
+
 ```
-project-manager-senior → ArchitectUX → Developer → EvidenceQA → testing-reality-checker
+agents-orchestrator (creates Issue #1)
+  → project-manager-senior (creates Issue #2)
+  → ArchitectUX (creates Issue #3)
+  → engineering-senior-developer (creates Issue #4)
+  → EvidenceQA (creates Issue #5)
+  → testing-reality-checker (creates Issue #6)
+```
+
+### n8n Workflow Development Pipeline
+**Agents:** n8n-orchestrator (coordination) + n8n-specific agents
+**Each agent creates its own GitHub Issue**
+
+```
+n8n-orchestrator (creates Issue #10)
+  → n8n-backend-architect (creates Issue #11 - analyzes requirements, proposes ADR)
+  → n8n-senior-workflow-and-ai-specialist (creates Issue #12 - implements workflow)
+  → n8n-tester (creates Issue #13 - validates with screenshots & evidence)
+  → n8n-orchestrator (reviews Issue #13, Go/No-Go decision)
+  → Infrastructure Maintainer (creates Issue #14 - deploys to production)
+```
+
+**Example n8n Workflow: Fix Webhook Response**
+```
+n8n-orchestrator (Issue #20: "Fix customer webhook - missing response")
+  → n8n-backend-architect (Issue #21: "Analyze webhook structure, identify disconnected 'Respond to Webhook' node")
+  → n8n-senior-workflow-and-ai-specialist (Issue #22: "Implement fix: connect response node on all paths")
+  → n8n-tester (Issue #23: "Validate webhook with curl commands, screenshot both success/error paths")
+  → n8n-orchestrator (reviews evidence, approves)
+  → Infrastructure Maintainer (Issue #24: "Document pattern, update production")
 ```
 
 ### Marketing Campaign
@@ -229,6 +314,28 @@ Detailed contribution guidelines are in CONTRIBUTING.md, but key points:
 
 ## Installation for Claude Code
 
+### Option 1: Git Submodule (Recommended for Production)
+Use this in your private workflow repository for automatic updates:
+
+```bash
+# In your private workflow repository
+cd company-workflows/.claude
+
+# Add agents as Git submodule
+git submodule add https://github.com/BPMspaceUG/bpm-agency-agents.git agents
+git commit -m "Add agent definitions via submodule"
+
+# Update agents when public repo has new versions
+git submodule update --remote agents
+git commit -am "Update agents to latest version"
+git push
+
+# After update: Restart Claude Code to load new definitions
+```
+
+### Option 2: Direct Copy (Quick Testing)
+Use this for quick testing or local development:
+
 ```bash
 # Copy all agents (including n8n) to Claude Code directory
 cp -r /home/rob/bpm-agency-agents/* ~/.claude/agents/
@@ -239,6 +346,32 @@ cp -r /home/rob/bpm-agency-agents/n8n/* ~/.claude/agents/n8n/
 # Activate in Claude Code sessions by referencing agent names
 # Example: "activate Frontend Developer mode and build React component"
 # Example: "activate n8n-orchestrator and design workflow pipeline"
+```
+
+### Keeping Agents Updated
+
+**With Git Submodules (automated):**
+```bash
+# Check for updates
+cd company-workflows
+git submodule update --remote .claude/agents
+
+# If changes detected
+git add .claude/agents
+git commit -m "Update agents to latest version"
+git push
+
+# Restart Claude Code
+```
+
+**With Direct Copy (manual):**
+```bash
+# Re-copy files when updates available
+cd /home/rob/bpm-agency-agents
+git pull
+cp -r * ~/.claude/agents/
+
+# Restart Claude Code
 ```
 
 ## Agent Philosophy
