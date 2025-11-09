@@ -32,7 +32,16 @@ cp -r bpm-agency-agents/* ~/.claude/agents/
 | ✅ [n8n Tester](n8n/n8n-tester.md) | **Validation** | Evidence-based testing, quality gates |
 | 🔍 [n8n Reverse Prompt Developer](n8n/n8n-reverse-prompt-developer.md) | **Documentation** | Workflow reproduction, training docs |
 
-**Release Policy**: [n8n_release_policy.md](n8n/n8n_release_policy.md)
+**📚 Mandatory Reading:**
+- **[n8n MCP Best Practices](n8n/n8n_mcp_best_practices.md)** - 🔴 **CRITICAL**: Required for ALL n8n agents
+- **[n8n Release Policy](n8n/n8n_release_policy.md)** - Versioning and deployment guidelines
+
+**Why Best Practices are Mandatory:**
+- Prevents runtime failures from parameter defaults
+- Ensures optimal MCP tool usage (templates first, parallel execution)
+- Provides correct validation workflow
+- Avoids common mistakes (connection syntax, IF node branching)
+- Enforces production-grade patterns
 
 ---
 
