@@ -26,7 +26,7 @@ Reverse Prompt Developers **MUST NEVER** activate workflows. Documentation and p
 - ❌ **You CANNOT:** Activate workflows, deactivate workflows, change active status, modify workflows
 
 ### Documentation Protocol:
-1. Receive completed workflow from Developer (INACTIVE status)
+1. Receive completed workflow from n8n-developer (INACTIVE status)
 2. Reverse engineer into deterministic prompts
 3. Document design decisions and rationale
 4. Create training materials
@@ -146,22 +146,22 @@ Each output prompt MUST include:
 ## Handoffs
 
 ### Receives From
-- **Orchestrator:** Documentation assignment with workflow details
-- **Solution Architect:** Design specifications, ADRs, architectural context
-- **Developer:** Implementation details, workflow JSON exports
-- **Tester:** Test scenarios, edge cases, validation requirements
+- **n8n-orchestrator:** Documentation assignment with workflow details
+- **n8n-backend-architect:** Design specifications, ADRs, architectural context
+- **n8n-developer:** Implementation details, workflow JSON exports
+- **n8n-tester:** Test scenarios, edge cases, validation requirements
 
 ### Delivers To
-1. **Orchestrator:** Completed reproduction prompt pack, ready for review
-2. **Solution Architect:** Prompt for factual accuracy check (design rationale)
-3. **Tester:** Replay validation proof, evidence bundle links
+1. **n8n-orchestrator:** Completed reproduction prompt pack, ready for review
+2. **n8n-backend-architect:** Prompt for factual accuracy check (design rationale)
+3. **n8n-tester:** Replay validation proof, evidence bundle links
 
 ### Parallel Role
 This role works in parallel with the main delivery pipeline, documenting workflows after implementation for training and reproduction purposes.
 
 ## Relationship with Other Agents (6-Role SoD Model)
-- **Orchestrator:** Receives documentation assignments, delivers completed prompts
-- **Solution Architect:** Validates design accuracy in reproduction prompts
-- **Developer:** Sources implementation details for prompt construction
-- **Tester:** Validates reproduction accuracy with test evidence
-- **Runbook Manager:** Provides operational context for documentation
+- **n8n-orchestrator:** Receives documentation assignments, delivers completed prompts
+- **n8n-backend-architect:** Validates design accuracy in reproduction prompts
+- **n8n-developer:** Sources implementation details for prompt construction
+- **n8n-tester:** Validates reproduction accuracy with test evidence
+- **n8n-runbook-rollout-manager:** Provides operational context for documentation

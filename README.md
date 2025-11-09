@@ -48,9 +48,9 @@ cp -r bpm-agency-agents/* ~/.claude/agents/
 ## 🔄 Standard Handoff Chain
 
 ```
-Orchestrator → Solution Architect → Developer → Tester → Go/No-Go → Runbook Manager
-                                                           │
-                                                           └─ NO → Back to Developer
+n8n-orchestrator → n8n-backend-architect → n8n-developer → n8n-tester → Go/No-Go → n8n-runbook-rollout-manager
+                                                                          │
+                                                                          └─ NO → Back to n8n-developer
 ```
 
 **SoD Compliance:**
@@ -383,12 +383,12 @@ If starting from external JSON/template:
 **Problem:** Production workflow failing intermittently
 
 **Team:**
-1. **Orchestrator** - Assign debugging task
-2. **Solution Architect** - Analyze logs, design fix
-3. **Developer** - Implement fix (V+1)
-4. **Tester** - Validate with evidence
-5. **Orchestrator** - Go/No-Go decision
-6. **Runbook Manager** - Activate, monitor production
+1. **n8n-orchestrator** - Assign debugging task
+2. **n8n-backend-architect** - Analyze logs, design fix
+3. **n8n-developer** - Implement fix (V+1)
+4. **n8n-tester** - Validate with evidence
+5. **n8n-orchestrator** - Go/No-Go decision
+6. **n8n-runbook-rollout-manager** - Activate, monitor production
 
 **Result:** Validated fix with full audit trail
 
@@ -398,12 +398,12 @@ If starting from external JSON/template:
 **Problem:** Ad-hoc workflow without documentation
 
 **Team:**
-1. **Reverse Prompt Developer** - Analyze & document existing workflow
-2. **Orchestrator** - Assign rebuild project
-3. **Solution Architect** - Design optimized architecture
-4. **Developer** - Implement new workflow
-5. **Tester** - Validate functional equivalency
-6. **Runbook Manager** - Deploy & monitor
+1. **n8n-reverse-prompt-developer** - Analyze & document existing workflow
+2. **n8n-orchestrator** - Assign rebuild project
+3. **n8n-backend-architect** - Design optimized architecture
+4. **n8n-developer** - Implement new workflow
+5. **n8n-tester** - Validate functional equivalency
+6. **n8n-runbook-rollout-manager** - Deploy & monitor
 
 **Result:** Production-ready workflow with proper documentation
 
@@ -413,13 +413,13 @@ If starting from external JSON/template:
 **Problem:** Build complex workflow from requirements
 
 **Team:**
-1. **Orchestrator** - Intake requirements
-2. **Solution Architect** - Design architecture (Gate 1)
-3. **Developer** - Implement specification (V+1)
-4. **Tester** - Execute comprehensive tests
-5. **Iteration Loop** - Developer fixes → Tester validates (repeat until pass)
-6. **Orchestrator** - Review evidence (Gate 3), Go/No-Go
-7. **Runbook Manager** - Activate & monitor
+1. **n8n-orchestrator** - Intake requirements
+2. **n8n-backend-architect** - Design architecture (Gate 1)
+3. **n8n-developer** - Implement specification (V+1)
+4. **n8n-tester** - Execute comprehensive tests
+5. **Iteration Loop** - n8n-developer fixes → n8n-tester validates (repeat until pass)
+6. **n8n-orchestrator** - Review evidence (Gate 3), Go/No-Go
+7. **n8n-runbook-rollout-manager** - Activate & monitor
 
 **Result:** Production-ready workflow meeting exact specifications
 
