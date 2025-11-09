@@ -45,39 +45,43 @@ cp -r bpm-agency-agents/* ~/.claude/agents/
 
 ---
 
-## 🎨 FlightPHP Frontend Agents
+## 🎨 FlightPHP Frontend Guidelines
 
-**Frontend-only agents for n8n workflow integration**
+**Frontend-only web applications for n8n workflow integration**
 
-FlightPHP agents provide web frontends that integrate tightly with n8n workflows. They handle forms, input validation, and result visualization while delegating all business logic to n8n.
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| 📝 **Forms** | [Bootstrap 5](https://getbootstrap.com/docs/5.0/) | User input collection, workflow triggers |
+| ✅ **Validation** | Server-side PHP | Input sanitization before n8n |
+| 🔗 **Integration** | cURL/HTTP POST | Call n8n webhook endpoints |
+| 📊 **Display** | [DataTables](https://datatables.net/) | Workflow result visualization |
+| 🎨 **Layout** | Bootstrap 5 + Partials | Shared header/footer, consistent UI |
+| 📋 **Views** | PHP Templates | No inline HTML in controllers |
 
 **📚 Mandatory Reading:**
-- **[FlightPHP Agent Instructions](flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md)** - 🔴 **CRITICAL**: Required for ALL FlightPHP agents
+- **[FlightPHP Agent Instructions](flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md)** - 🔴 **CRITICAL**: Required for ALL FlightPHP implementations
 
-**Key Principles:**
-- **Frontend-only** - No business logic in PHP (all logic lives in n8n)
-- **[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)** - All UI components and layouts
-- **[DataTables](https://datatables.net/)** - All tabular result displays
-- **KISS** - Keep It Simple, Stupid (minimal, auditable code)
-- **Shared Layout** - Mandatory header/footer partials across all pages
-- **Views Only** - No inline HTML in controllers
+**Why These Guidelines are Mandatory:**
+- Enforces frontend-only pattern (no business logic in PHP)
+- Ensures consistent UI/UX across all n8n frontends
+- Prevents business logic duplication between n8n and FlightPHP
+- Maintains audit trail via shared header/footer
+- Guarantees DataTables for all result displays
+- Follows GLOBAL_INSTRUCTION_SYSTEM_RULES_ALL_PROJECTS.md
 
 **Integration Pattern:**
 ```
-User → FlightPHP Form → n8n Workflow → FlightPHP Result Display
+User → FlightPHP Form → n8n Webhook → FlightPHP Result Display
+                             ↓
+                        (All Logic)
 ```
 
-**Agent Responsibilities:**
-- ✅ Render forms and input fields
-- ✅ Validate and sanitize user input
-- ✅ Call n8n webhooks/APIs
-- ✅ Display workflow results with DataTables
-- ❌ NEVER implement business logic (belongs in n8n)
-
-**Coordination:**
-- n8n agents open GitHub Issues requesting frontends
-- FlightPHP agents implement routes/views per specification
-- All changes follow `GLOBAL_INSTRUCTION_SYSTEM_RULES_ALL_PROJECTS.md`
+**Coordination with n8n Agents:**
+1. **n8n-solution-architect** designs workflow + webhook contracts
+2. **n8n-solution-architect** opens GitHub Issue (label: `frontend:flightphp`)
+3. **FlightPHP agent** implements routes/views per specification
+4. **n8n-orchestrator** reviews implementation
+5. **Integration:** FlightPHP calls n8n webhooks, renders responses
 
 ---
 
