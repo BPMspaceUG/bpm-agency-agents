@@ -219,7 +219,7 @@ company-workflows/              # Private repository
 
 ### Adding New Agents
 1. Choose appropriate category directory
-2. Follow the agent template structure in CONTRIBUTING.md
+2. Follow existing agent structure and formatting conventions
 3. Include 2-3 concrete code examples with modern best practices
 4. Define specific, measurable success metrics
 5. Test agent in real scenarios before submitting
@@ -277,16 +277,6 @@ marketing-content-creator → marketing-twitter-engager → marketing-instagram-
 ```
 Rapid Prototyper → Frontend Developer → Backend Architect → EvidenceQA
 ```
-
-## Contributing Guidelines
-
-Detailed contribution guidelines are in CONTRIBUTING.md, but key points:
-
-- **Agent personality** must be distinct and memorable (not generic)
-- **Code examples** must be real, runnable code with proper syntax highlighting
-- **Success metrics** must include specific numbers where possible
-- **Test in practice** before submitting - agents should be battle-tested
-- Follow existing agent structure and formatting conventions
 
 ## Quality Standards
 
