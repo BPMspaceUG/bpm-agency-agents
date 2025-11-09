@@ -45,6 +45,42 @@ cp -r bpm-agency-agents/* ~/.claude/agents/
 
 ---
 
+## 🎨 FlightPHP Frontend Agents
+
+**Frontend-only agents for n8n workflow integration**
+
+FlightPHP agents provide web frontends that integrate tightly with n8n workflows. They handle forms, input validation, and result visualization while delegating all business logic to n8n.
+
+**📚 Mandatory Reading:**
+- **[FlightPHP Agent Instructions](flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md)** - 🔴 **CRITICAL**: Required for ALL FlightPHP agents
+
+**Key Principles:**
+- **Frontend-only** - No business logic in PHP (all logic lives in n8n)
+- **Bootstrap 5** - All UI components and layouts
+- **DataTables** - All tabular result displays
+- **KISS** - Keep It Simple, Stupid (minimal, auditable code)
+- **Shared Layout** - Mandatory header/footer partials across all pages
+- **Views Only** - No inline HTML in controllers
+
+**Integration Pattern:**
+```
+User → FlightPHP Form → n8n Workflow → FlightPHP Result Display
+```
+
+**Agent Responsibilities:**
+- ✅ Render forms and input fields
+- ✅ Validate and sanitize user input
+- ✅ Call n8n webhooks/APIs
+- ✅ Display workflow results with DataTables
+- ❌ NEVER implement business logic (belongs in n8n)
+
+**Coordination:**
+- n8n agents open GitHub Issues requesting frontends
+- FlightPHP agents implement routes/views per specification
+- All changes follow `GLOBAL_INSTRUCTION_SYSTEM_RULES_ALL_PROJECTS.md`
+
+---
+
 ## 🔄 Standard Handoff Chain
 
 ```

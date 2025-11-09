@@ -4,12 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is **The Agency** - a fork of the original agency-agents repository, extended with **n8n workflow automation agents** and a dedicated release policy for n8n workflow management.
+This is **The Agency** - a fork of the original agency-agents repository, extended with **n8n workflow automation agents** and **FlightPHP frontend agent guidelines**.
 
 The repository contains:
 - **51 specialized AI agent personalities** organized into 9 divisions (from original Agency)
 - **6 n8n-specific workflow agents** for n8n automation and development
 - **n8n release policy** for managing n8n workflow versions and deployments
+- **FlightPHP agent instructions** for frontend-only web applications integrated with n8n workflows
 
 Each agent is a markdown file with YAML frontmatter defining a specialized AI persona with distinct personality, workflows, deliverables, and success metrics. These agents are designed for use with Claude Code and other AI systems to provide deep domain expertise.
 
@@ -26,13 +27,17 @@ Each agent is a markdown file with YAML frontmatter defining a specialized AI pe
 ├── support/             # Operations and support specialists (6 agents)
 ├── spatial-computing/   # AR/VR/XR specialists (6 agents)
 ├── specialized/         # Cross-domain specialists (3 agents)
-└── n8n/                 # n8n workflow automation specialists (5 agents + release policy)
-    ├── n8n-orchestrator.md
-    ├── n8n-backend-architect.md
-    ├── n8n-tester.md
-    ├── n8n-reverse-prompt-developer.md
-    ├── n8n-senior-workflow-and-ai-specialist.md
-    └── n8n_release_policy.md
+├── n8n/                 # n8n workflow automation specialists (6 agents + docs)
+│   ├── n8n-orchestrator.md
+│   ├── n8n-backend-architect.md
+│   ├── n8n-developer.md
+│   ├── n8n-tester.md
+│   ├── n8n-reverse-prompt-developer.md
+│   ├── n8n-runbook-rollout-manager.md
+│   ├── n8n_mcp_best_practices.md
+│   └── n8n_release_policy.md
+└── flightphp/           # FlightPHP frontend agent guidelines
+    └── FLIGHTPHP_AGENT_INSTRUCTIONS.md
 ```
 
 ## Agent File Architecture
@@ -173,6 +178,46 @@ Expert in advanced n8n workflow patterns, AI integrations, and automation best p
 ### n8n Release Policy
 See `n8n/n8n_release_policy.md` for versioning, deployment, and workflow management guidelines specific to n8n automation projects.
 
+## FlightPHP Frontend Agents
+
+This fork also includes **FlightPHP agent guidelines** for creating web frontends that integrate with n8n workflows.
+
+### FlightPHP Agent Instructions
+See `flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md` for the authoritative guidelines for all FlightPHP agents.
+
+**Key Principles:**
+- **Frontend-only** - No business logic in PHP (all domain logic lives in n8n or backend services)
+- **Bootstrap 5** - All UI components and layouts
+- **DataTables** - All tabular result displays
+- **KISS** - Keep It Simple, Stupid (minimal, auditable code)
+- **Shared Layout** - Mandatory header/footer partials across all pages
+- **Views Only** - No inline HTML in controllers
+- **Compliance** - Must follow `GLOBAL_INSTRUCTION_SYSTEM_RULES_ALL_PROJECTS.md`
+
+**Integration Pattern:**
+```
+User → FlightPHP Form → n8n Workflow → FlightPHP Result Display
+```
+
+**Agent Responsibilities:**
+- ✅ Render forms and input fields
+- ✅ Validate and sanitize user input
+- ✅ Call n8n webhooks/APIs
+- ✅ Display workflow results with DataTables
+- ❌ NEVER implement business logic (belongs in n8n)
+
+**Coordination with n8n Agents:**
+1. n8n agents open GitHub Issues requesting frontends
+2. FlightPHP agents implement routes/views per specification
+3. FlightPHP agents call n8n webhooks and render responses
+4. All changes follow global system rules
+
+**Directory Structure:**
+```
+flightphp/
+└── FLIGHTPHP_AGENT_INSTRUCTIONS.md  # Authoritative guidelines for all FlightPHP agents
+```
+
 ## Production Workflow Coordination
 
 For production deployments using n8n and agent coordination, see **`WORKFLOW_COORDINATION.md`** for the complete system architecture.
@@ -295,11 +340,12 @@ Rapid Prototyper → Frontend Developer → Backend Architect → EvidenceQA
 ## Repository Metadata
 
 - **License**: MIT
-- **Total Agents**: 56 (51 original + 5 n8n specialists)
+- **Total Agents**: 57 (51 original + 6 n8n specialists)
 - **Divisions**: 10 (9 original + n8n division)
+- **Additional Guidelines**: FlightPHP frontend agent instructions
 - **Lines of Content**: 10,000+ of personality, process, and examples
 - **Born from**: Reddit discussion about AI agent specialization
-- **Fork Purpose**: Extended for n8n workflow automation management
+- **Fork Purpose**: Extended for n8n workflow automation management and FlightPHP frontend integration
 - **Primary Use**: Integration with Claude Code agent system
 
 ## Installation for Claude Code
@@ -333,9 +379,13 @@ cp -r /home/rob/bpm-agency-agents/* ~/.claude/agents/
 # Or copy only n8n agents
 cp -r /home/rob/bpm-agency-agents/n8n/* ~/.claude/agents/n8n/
 
+# Or copy FlightPHP guidelines
+cp -r /home/rob/bpm-agency-agents/flightphp/* ~/.claude/agents/flightphp/
+
 # Activate in Claude Code sessions by referencing agent names
 # Example: "activate Frontend Developer mode and build React component"
 # Example: "activate n8n-orchestrator and design workflow pipeline"
+# Example: "follow FlightPHP Agent Instructions for creating customer form frontend"
 ```
 
 ### Keeping Agents Updated
