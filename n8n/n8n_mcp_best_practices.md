@@ -6,6 +6,73 @@
 
 ---
 
+## 0. PREREQUISITE: Context7 Documentation Retrieval
+
+**🔴 MANDATORY FIRST STEP**: Before any n8n workflow design, development, or testing, **ALWAYS check Context7 MCP Server for latest documentation**.
+
+### Why Context7?
+- **Single source of truth** for n8n, FlightPHP, and integration documentation
+- **Always up-to-date** - synchronized with official sources
+- **Faster than web search** - Redis-backed instant retrieval
+- **Prevents outdated practices** - ensures you use latest API patterns
+
+### Context7 Workflow (Execute Before ANY n8n Work)
+
+```javascript
+// STEP 1: Check if Context7 MCP is available
+// Look for mcp__Context7__* tools in your environment
+
+// STEP 2: Retrieve latest documentation
+// For n8n workflows:
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+mcp__Context7__get({key: "n8n:node-reference"})
+
+// For FlightPHP integration:
+mcp__Context7__get({key: "flightphp:docs:latest"})
+mcp__Context7__get({key: "flightphp:n8n-integration"})
+
+// For webhook contracts:
+mcp__Context7__get({key: "n8n:webhook-patterns"})
+```
+
+### When to Query Context7
+
+| Phase | What to Retrieve | Key Pattern |
+|-------|------------------|-------------|
+| **Before Design** | Architecture patterns, node capabilities | `n8n:architecture:*`, `n8n:nodes:*` |
+| **Before Implementation** | Node documentation, connection patterns | `n8n:node-reference:*`, `n8n:connections:*` |
+| **Before Testing** | Test patterns, validation rules | `n8n:testing:*`, `n8n:validation:*` |
+| **Before Frontend** | FlightPHP patterns, webhook contracts | `flightphp:*`, `n8n:webhooks:*` |
+
+### Fallback Strategy (If Context7 Unavailable)
+
+If `mcp__Context7__*` tools are NOT available:
+1. ⚠️ Log warning: "Context7 MCP not available - using embedded best practices"
+2. Proceed with embedded n8n-MCP tool documentation
+3. Use `tools_documentation()` from n8n-MCP for reference
+4. **Document assumption**: "Using embedded docs - may not reflect latest n8n updates"
+
+### Integration with Orchestrator
+
+**n8n-orchestrator** must:
+- ✅ Verify Context7 availability at project start
+- ✅ Include Context7 check in all agent sub-issues
+- ✅ Document Context7 retrieval status in project charter
+
+**Example sub-issue text:**
+```markdown
+## 📚 MANDATORY: Context7 Documentation Check
+
+Before starting work, retrieve latest documentation:
+- `mcp__Context7__get({key: "n8n:docs:latest"})`
+- `mcp__Context7__get({key: "n8n:node-reference"})`
+
+If Context7 unavailable: document fallback strategy.
+```
+
+---
+
 ## Core Principles
 
 ### 1. Silent Execution

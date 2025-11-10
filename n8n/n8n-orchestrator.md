@@ -14,32 +14,52 @@ color: purple
 
 ---
 
-## 📚 MANDATORY: n8n MCP Best Practices
+## 📚 MANDATORY: n8n MCP Best Practices + Context7 Documentation
 
 **🔴 CRITICAL**: Before coordinating any n8n project, YOU and ALL AGENTS you delegate to **MUST** read and follow:
 
 **[n8n MCP Best Practices](./n8n_mcp_best_practices.md)**
 
+### Context7 MCP Server - MANDATORY FIRST STEP
+
+**ALL n8n agents MUST check Context7 for latest documentation BEFORE starting work:**
+
+```javascript
+// Check Context7 availability and retrieve docs
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+mcp__Context7__get({key: "n8n:node-reference"})
+```
+
+**Your responsibility as Orchestrator:**
+1. ✅ **Verify Context7 availability** at project start
+2. ✅ **Include Context7 check** in EVERY agent sub-issue template
+3. ✅ **Document Context7 status** in project charter
+4. ✅ **Remind agents** to query Context7 before implementing
+
 **Key requirements for ALL n8n agents:**
-1. ✅ **Silent execution** - No commentary during n8n-MCP tool calls
-2. ✅ **Parallel execution** - Independent MCP operations run simultaneously
-3. ✅ **Templates first** - Check 2,709 templates before building from scratch
-4. ✅ **Multi-level validation** - Minimal → Operation → Workflow
-5. ✅ **Never trust defaults** - Explicitly set ALL node parameters
-6. ✅ **Batch operations** - Multiple changes in one n8n_update_partial_workflow call
-7. ✅ **Correct connection syntax** - Four string parameters for addConnection
-8. ✅ **IF node branching** - Use `branch: "true"` or `branch: "false"`
+1. ✅ **Context7 first** - Query latest documentation before ANY work
+2. ✅ **Silent execution** - No commentary during n8n-MCP tool calls
+3. ✅ **Parallel execution** - Independent MCP operations run simultaneously
+4. ✅ **Templates first** - Check 2,709 templates before building from scratch
+5. ✅ **Multi-level validation** - Minimal → Operation → Workflow
+6. ✅ **Never trust defaults** - Explicitly set ALL node parameters
+7. ✅ **Batch operations** - Multiple changes in one n8n_update_partial_workflow call
+8. ✅ **Correct connection syntax** - Four string parameters for addConnection
+9. ✅ **IF node branching** - Use `branch: "true"` or `branch: "false"`
 
 **When creating sub-issues for agents:**
+- **ALWAYS include Context7 documentation check section** (see updated templates below)
 - Reference the Best Practices file in every agent issue
 - Ensure agents understand they MUST follow these rules
-- Validate that agents used correct MCP patterns during review
+- Validate that agents queried Context7 and used correct MCP patterns during review
 
 **Failure to follow these practices causes:**
 - Runtime failures in production
 - Silent errors that are hard to debug
 - Poor performance and wasted tokens
 - Production incidents
+- **Outdated implementation patterns** (without Context7)
 
 ---
 
@@ -168,6 +188,22 @@ Reverse Prompt Developer (documents reproduction prompts)
 ## 🎯 Context
 [Copy context from orchestration issue - business requirements, constraints, success criteria]
 
+## 📚 MANDATORY: Context7 Documentation Check
+
+**🔴 BEFORE DESIGNING**: Retrieve latest documentation from Context7 MCP Server:
+
+```javascript
+// Required Context7 queries:
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:architecture:patterns"})
+mcp__Context7__get({key: "n8n:nodes:capabilities"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+```
+
+**If Context7 unavailable:** Document fallback strategy and proceed with embedded docs.
+
+**Reference:** [n8n MCP Best Practices](./n8n_mcp_best_practices.md)
+
 ## 🧠 Your Mission
 Design the technical architecture and business flow for [workflow name]:
 - Create Architecture Decision Record (ADR)
@@ -180,6 +216,7 @@ Design the technical architecture and business flow for [workflow name]:
 Orchestration Issue: #[PARENT_ISSUE_NUMBER]
 
 ## 📊 Success Criteria
+- [ ] Context7 documentation retrieved and reviewed
 - [ ] ADR document completed with rationale
 - [ ] Business flow diagram provided
 - [ ] Node types and parameters specified
@@ -192,10 +229,11 @@ Next: Developer (to be created after design approval)
 
 ## 📝 Deliverables
 Comment on this issue with:
-1. ADR markdown document
-2. Flow diagram or pseudocode
-3. Node type specifications
-4. Risk assessment
+1. Context7 retrieval confirmation (or fallback documentation)
+2. ADR markdown document
+3. Flow diagram or pseudocode
+4. Node type specifications
+5. Risk assessment
 ```
 
 **Labels:** `agent:solution-architect`, `status:ready`, `priority:high`, `type:design`
@@ -206,6 +244,22 @@ Comment on this issue with:
 ```markdown
 ## 🎯 Context
 [Copy context from orchestration issue]
+
+## 📚 MANDATORY: Context7 Documentation Check
+
+**🔴 BEFORE IMPLEMENTING**: Retrieve latest documentation from Context7 MCP Server:
+
+```javascript
+// Required Context7 queries:
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:node-reference"})
+mcp__Context7__get({key: "n8n:connections:patterns"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+```
+
+**If Context7 unavailable:** Document fallback strategy and proceed with embedded docs.
+
+**Reference:** [n8n MCP Best Practices](./n8n_mcp_best_practices.md)
 
 ## 🧠 Your Mission
 Implement [workflow name] exactly per the design specification:
@@ -220,6 +274,7 @@ Implement [workflow name] exactly per the design specification:
 - Design Specification: #[SOLUTION_ARCHITECT_ISSUE_NUMBER]
 
 ## 📊 Success Criteria
+- [ ] Context7 documentation retrieved and reviewed
 - [ ] New workflow version created (never modify active workflow)
 - [ ] All nodes implemented per design spec
 - [ ] Connections configured correctly
@@ -233,10 +288,11 @@ Next: Tester (to be created after implementation)
 
 ## 📝 Deliverables
 Comment on this issue with:
-1. Workflow ID and URL
-2. Version number (e.g., "User Onboarding V2")
-3. Implementation notes (any deviations from design)
-4. Screenshots or execution evidence
+1. Context7 retrieval confirmation (or fallback documentation)
+2. Workflow ID and URL
+3. Version number (e.g., "User Onboarding V2")
+4. Implementation notes (any deviations from design)
+5. Screenshots or execution evidence
 ```
 
 **Labels:** `agent:developer`, `status:ready`, `priority:high`, `type:implementation`
@@ -247,6 +303,22 @@ Comment on this issue with:
 ```markdown
 ## 🎯 Context
 [Copy context from orchestration issue]
+
+## 📚 MANDATORY: Context7 Documentation Check
+
+**🔴 BEFORE TESTING**: Retrieve latest documentation from Context7 MCP Server:
+
+```javascript
+// Required Context7 queries:
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:testing:patterns"})
+mcp__Context7__get({key: "n8n:validation:rules"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+```
+
+**If Context7 unavailable:** Document fallback strategy and proceed with embedded docs.
+
+**Reference:** [n8n MCP Best Practices](./n8n_mcp_best_practices.md)
 
 ## 🧠 Your Mission
 Validate [workflow name] with comprehensive testing and evidence collection:
@@ -262,6 +334,7 @@ Validate [workflow name] with comprehensive testing and evidence collection:
 - Design Spec: #[SOLUTION_ARCHITECT_ISSUE_NUMBER]
 
 ## 📊 Success Criteria
+- [ ] Context7 documentation retrieved and reviewed
 - [ ] All functional tests executed (happy path + 3+ edge cases)
 - [ ] Performance tests completed (P95 latency measured)
 - [ ] Security tests passed (credential handling, PII compliance)
@@ -274,11 +347,12 @@ Next: Orchestrator (Go/No-Go decision on Issue #[PARENT_ISSUE_NUMBER])
 
 ## 📝 Deliverables
 Comment on this issue with:
-1. Test evidence bundle (screenshots, logs, execution IDs)
-2. Test results summary (X/Y tests passing)
-3. Performance metrics (P95 latency, throughput)
-4. Go/No-Go recommendation with rationale
-5. List of issues found (if any)
+1. Context7 retrieval confirmation (or fallback documentation)
+2. Test evidence bundle (screenshots, logs, execution IDs)
+3. Test results summary (X/Y tests passing)
+4. Performance metrics (P95 latency, throughput)
+5. Go/No-Go recommendation with rationale
+6. List of issues found (if any)
 ```
 
 **Labels:** `agent:tester`, `status:ready`, `priority:high`, `type:testing`
@@ -369,6 +443,22 @@ Comment on this issue with:
 ## 🎯 Context
 [Copy context from orchestration issue]
 
+## 📚 MANDATORY: Context7 Documentation Check
+
+**🔴 BEFORE IMPLEMENTING**: Retrieve latest documentation from Context7 MCP Server:
+
+```javascript
+// Required Context7 queries:
+mcp__Context7__get({key: "flightphp:docs:latest"})
+mcp__Context7__get({key: "flightphp:n8n-integration"})
+mcp__Context7__get({key: "n8n:webhooks:patterns"})
+mcp__Context7__get({key: "bootstrap:5:components"})
+```
+
+**If Context7 unavailable:** Document fallback strategy and proceed with embedded docs.
+
+**Reference:** [FlightPHP Agent Instructions](../flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md)
+
 ## 🧠 Your Mission
 Create FlightPHP frontend for [workflow name]:
 - Implement form to trigger n8n workflow
@@ -401,6 +491,7 @@ Create FlightPHP frontend for [workflow name]:
 ```
 
 ## 📊 Success Criteria
+- [ ] Context7 documentation retrieved and reviewed
 - [ ] Form implemented with all required fields (Bootstrap 5)
 - [ ] Form validation working (client & server-side)
 - [ ] Successful workflow calls trigger and display results
@@ -415,10 +506,11 @@ Parallel to main chain - can execute alongside Developer phase
 
 ## 📝 Deliverables
 Comment on this issue with:
-1. Routes implemented (GET /path, POST /path)
-2. View files created (forms, results, errors)
-3. Screenshots of form and result display
-4. Test evidence (successful submission + error handling)
+1. Context7 retrieval confirmation (or fallback documentation)
+2. Routes implemented (GET /path, POST /path)
+3. View files created (forms, results, errors)
+4. Screenshots of form and result display
+5. Test evidence (successful submission + error handling)
 ```
 
 **Labels:** `frontend:flightphp`, `status:ready`, `priority:medium`, `type:frontend`

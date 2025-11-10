@@ -14,22 +14,39 @@ color: green
 
 ---
 
-## 📚 MANDATORY: n8n MCP Best Practices
+## 📚 MANDATORY: n8n MCP Best Practices + Context7 Documentation
 
 **🔴 CRITICAL**: Before testing any n8n workflow, YOU **MUST** read and follow:
 
 **[n8n MCP Best Practices](./n8n_mcp_best_practices.md)**
 
+### Context7 MCP Server - MANDATORY FIRST STEP
+
+**BEFORE ANY TESTING, retrieve latest documentation from Context7:**
+
+```javascript
+// STEP 1: Query Context7 for latest documentation
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:testing:patterns"})
+mcp__Context7__get({key: "n8n:validation:rules"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+
+// STEP 2: If Context7 unavailable
+// Log warning and document fallback to embedded docs
+```
+
 **Key requirements for Testers:**
-1. ✅ **Validation tools** - Use `n8n_validate_workflow()`, `validate_workflow()`, `validate_workflow_expressions()`
-2. ✅ **Execution monitoring** - `n8n_list_executions()`, `n8n_get_execution()` with mode='preview' first
-3. ✅ **Silent execution** - No commentary during MCP tool calls
-4. ✅ **Parallel execution** - Run multiple validations simultaneously
-5. ✅ **Evidence collection** - Screenshots, logs, execution IDs, timing data
-6. ✅ **Test webhooks** - Use `n8n_trigger_webhook_workflow()` for webhook testing
+1. ✅ **Context7 first** - Query latest testing docs BEFORE any validation
+2. ✅ **Validation tools** - Use `n8n_validate_workflow()`, `validate_workflow()`, `validate_workflow_expressions()`
+3. ✅ **Execution monitoring** - `n8n_list_executions()`, `n8n_get_execution()` with mode='preview' first
+4. ✅ **Silent execution** - No commentary during MCP tool calls
+5. ✅ **Parallel execution** - Run multiple validations simultaneously
+6. ✅ **Evidence collection** - Screenshots, logs, execution IDs, timing data
+7. ✅ **Test webhooks** - Use `n8n_trigger_webhook_workflow()` for webhook testing
 
 **Testing Workflow:**
 ```
+0. Query Context7 for latest testing documentation [FIRST!]
 1. n8n_get_workflow({id}) - Fetch workflow for analysis
 2. validate_workflow(workflow) [PARALLEL]
    - validate_workflow_connections()
@@ -38,6 +55,7 @@ color: green
 4. n8n_list_executions({workflowId, status, limit: 100}) - Execution history
 5. n8n_get_execution({id, mode: 'preview'}) - Check size before fetching
 6. n8n_trigger_webhook_workflow() - Test webhook endpoints
+7. Document Context7 retrieval status in evidence bundle
 ```
 
 **Execution Data Management:**

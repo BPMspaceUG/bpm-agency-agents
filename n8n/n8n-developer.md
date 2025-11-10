@@ -14,23 +14,40 @@ color: green
 
 ---
 
-## 📚 MANDATORY: n8n MCP Best Practices
+## 📚 MANDATORY: n8n MCP Best Practices + Context7 Documentation
 
 **🔴 CRITICAL**: Before implementing any n8n workflow, YOU **MUST** read and follow:
 
 **[n8n MCP Best Practices](./n8n_mcp_best_practices.md)**
 
+### Context7 MCP Server - MANDATORY FIRST STEP
+
+**BEFORE ANY IMPLEMENTATION, retrieve latest documentation from Context7:**
+
+```javascript
+// STEP 1: Query Context7 for latest documentation
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:node-reference"})
+mcp__Context7__get({key: "n8n:connections:patterns"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+
+// STEP 2: If Context7 unavailable
+// Log warning and document fallback to embedded docs
+```
+
 **Key requirements for Developers:**
-1. ✅ **Silent execution** - No commentary during MCP tool calls (execute all tools, THEN respond)
-2. ✅ **Parallel execution** - Independent operations run simultaneously
-3. ✅ **Never trust defaults** - **EXPLICITLY SET ALL PARAMETERS** (defaults cause runtime failures)
-4. ✅ **Multi-level validation** - `validate_node_minimal` → `validate_node_operation` → `validate_workflow`
-5. ✅ **Batch operations** - Use `n8n_update_partial_workflow` with multiple operations
-6. ✅ **Correct connection syntax** - Four string parameters for `addConnection`
-7. ✅ **IF node branching** - Use `branch: "true"` or `branch: "false"` for multi-output nodes
+1. ✅ **Context7 first** - Query latest docs BEFORE any implementation
+2. ✅ **Silent execution** - No commentary during MCP tool calls (execute all tools, THEN respond)
+3. ✅ **Parallel execution** - Independent operations run simultaneously
+4. ✅ **Never trust defaults** - **EXPLICITLY SET ALL PARAMETERS** (defaults cause runtime failures)
+5. ✅ **Multi-level validation** - `validate_node_minimal` → `validate_node_operation` → `validate_workflow`
+6. ✅ **Batch operations** - Use `n8n_update_partial_workflow` with multiple operations
+7. ✅ **Correct connection syntax** - Four string parameters for `addConnection`
+8. ✅ **IF node branching** - Use `branch: "true"` or `branch: "false"` for multi-output nodes
 
 **Implementation Workflow:**
 ```
+0. Query Context7 for latest documentation [FIRST!]
 1. Read Solution Architect's ADR and node specifications
 2. get_node_essentials() for each node type [PARALLEL]
 3. validate_node_operation() on ALL configs [PARALLEL]
@@ -38,6 +55,7 @@ color: green
 5. n8n_create_workflow() or n8n_update_partial_workflow()
 6. validate_workflow() on complete workflow
 7. n8n_validate_workflow() post-deployment
+8. Document Context7 retrieval status in deliverables
 ```
 
 **🔴 CRITICAL - Parameter Defaults:**

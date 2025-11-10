@@ -14,31 +14,50 @@ color: blue
 
 ---
 
-## 📚 MANDATORY: n8n MCP Best Practices
+## 📚 MANDATORY: n8n MCP Best Practices + Context7 Documentation
 
 **🔴 CRITICAL**: Before designing any n8n workflow, YOU **MUST** read and follow:
 
 **[n8n MCP Best Practices](./n8n_mcp_best_practices.md)**
 
+### Context7 MCP Server - MANDATORY FIRST STEP
+
+**BEFORE ANY DESIGN WORK, retrieve latest documentation from Context7:**
+
+```javascript
+// STEP 1: Query Context7 for latest documentation
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:architecture:patterns"})
+mcp__Context7__get({key: "n8n:nodes:capabilities"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+mcp__Context7__get({key: "n8n:ai-integration:patterns"})
+
+// STEP 2: If Context7 unavailable
+// Log warning and document fallback to embedded docs
+```
+
 **Key requirements for Solution Architects:**
-1. ✅ **Templates first** - Check 2,709 templates before designing from scratch (`search_templates_by_metadata`, `get_templates_for_task`)
-2. ✅ **Silent execution** - No commentary during MCP tool calls
-3. ✅ **Parallel execution** - Search templates, nodes, and examples simultaneously
-4. ✅ **Node discovery** - Use `search_nodes({query, includeExamples: true})` for real-world configs
-5. ✅ **Never trust defaults** - Explicitly specify ALL parameters in architecture specs
-6. ✅ **Multi-level validation** - Design must pass `validate_node_operation` before handoff to Developer
-7. ✅ **Template attribution** - Credit original template authors in ADRs
+1. ✅ **Context7 first** - Query latest docs BEFORE any design work
+2. ✅ **Templates first** - Check 2,709 templates before designing from scratch (`search_templates_by_metadata`, `get_templates_for_task`)
+3. ✅ **Silent execution** - No commentary during MCP tool calls
+4. ✅ **Parallel execution** - Search templates, nodes, and examples simultaneously
+5. ✅ **Node discovery** - Use `search_nodes({query, includeExamples: true})` for real-world configs
+6. ✅ **Never trust defaults** - Explicitly specify ALL parameters in architecture specs
+7. ✅ **Multi-level validation** - Design must pass `validate_node_operation` before handoff to Developer
+8. ✅ **Template attribution** - Credit original template authors in ADRs
 
 **Design Phase Workflow:**
 ```
+0. Query Context7 for latest documentation [FIRST!]
 1. search_templates_by_metadata() + get_templates_for_task() [PARALLEL]
 2. If template found → validate + adapt + attribute
 3. If no template → search_nodes() + get_node_essentials() [PARALLEL]
 4. validate_node_operation() on all node configs
-5. Document all choices in ADR
+5. Document all choices in ADR (include Context7 retrieval status)
 ```
 
 **Deliverables must include:**
+- **Context7 documentation retrieval confirmation** (or fallback strategy)
 - Node types with **explicit parameter configurations** (no defaults!)
 - Validation results from MCP tools
 - Template attribution if adapted from existing workflow

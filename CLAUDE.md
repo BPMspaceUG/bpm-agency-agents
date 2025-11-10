@@ -40,6 +40,74 @@ Each agent is a markdown file with YAML frontmatter defining a specialized AI pe
     └── FLIGHTPHP_AGENT_INSTRUCTIONS.md
 ```
 
+## Context7 MCP Server Integration
+
+**🔴 CRITICAL**: All n8n and FlightPHP agents **MUST** query Context7 MCP Server for latest documentation before starting work.
+
+### What is Context7?
+
+Context7 is a Redis-backed MCP (Model Context Protocol) server that provides:
+- **Latest n8n documentation** - Always up-to-date with current n8n APIs and node capabilities
+- **FlightPHP integration patterns** - Current best practices for FlightPHP + n8n webhook integration
+- **Bootstrap 5 & DataTables docs** - Latest component patterns and configurations
+- **Prompt engineering patterns** - Optimized prompts for workflow reconstruction
+
+### Why Context7 is Mandatory
+
+- ✅ **Prevents outdated practices** - Ensures agents use latest API patterns
+- ✅ **Single source of truth** - Eliminates conflicting documentation sources
+- ✅ **Faster than web search** - Redis-backed instant retrieval
+- ✅ **Synchronized with official sources** - Automatically updated
+
+### When to Use Context7
+
+**n8n Agents (MANDATORY):**
+- n8n-orchestrator: Verifies Context7 availability at project start
+- n8n-solution-architect: Queries `n8n:architecture:*`, `n8n:nodes:*` before design
+- n8n-developer: Queries `n8n:node-reference:*`, `n8n:connections:*` before implementation
+- n8n-tester: Queries `n8n:testing:*`, `n8n:validation:*` before testing
+- n8n-reverse-prompt-developer: Queries `n8n:prompt-engineering:*` before documenting
+- n8n-runbook-rollout-manager: Queries `n8n:operations:*` before deployment
+
+**FlightPHP Agents (MANDATORY):**
+- Queries `flightphp:*`, `bootstrap:5:*`, `datatables:*`, `n8n:webhooks:*` before implementation
+
+### Context7 Key Patterns
+
+```javascript
+// n8n documentation
+mcp__Context7__get({key: "n8n:docs:latest"})
+mcp__Context7__get({key: "n8n:best-practices:2025"})
+mcp__Context7__get({key: "n8n:node-reference"})
+
+// FlightPHP documentation
+mcp__Context7__get({key: "flightphp:docs:latest"})
+mcp__Context7__get({key: "flightphp:n8n-integration"})
+
+// Bootstrap & DataTables
+mcp__Context7__get({key: "bootstrap:5:components"})
+mcp__Context7__get({key: "datatables:docs:latest"})
+
+// Webhook integration
+mcp__Context7__get({key: "n8n:webhooks:patterns"})
+```
+
+### Fallback Strategy
+
+If Context7 MCP is unavailable:
+1. ⚠️ Agent logs warning: "Context7 MCP not available"
+2. Agent documents fallback strategy
+3. Agent proceeds with embedded documentation
+4. Agent notes: "Using embedded docs - may not reflect latest updates"
+
+### Documentation
+
+- **n8n Best Practices:** `n8n/n8n_mcp_best_practices.md` (includes Context7 section)
+- **FlightPHP Instructions:** `flightphp/FLIGHTPHP_AGENT_INSTRUCTIONS.md` (includes Context7 section)
+- Each agent definition includes Context7 instructions in its documentation
+
+---
+
 ## Agent File Architecture
 
 Each agent follows a consistent structure:

@@ -41,6 +41,67 @@ You MUST NOT:
 
 ---
 
+## 0.1 MANDATORY: Context7 Documentation Retrieval
+
+**🔴 CRITICAL**: Before implementing any FlightPHP frontend, **ALWAYS retrieve latest documentation from Context7 MCP Server**.
+
+### Why Context7?
+- **Single source of truth** for FlightPHP, Bootstrap 5, DataTables, and n8n webhook integration
+- **Always up-to-date** - synchronized with official sources
+- **Faster than web search** - Redis-backed instant retrieval
+- **Prevents outdated practices** - ensures you use latest API patterns
+
+### Context7 Workflow (Execute Before ANY FlightPHP Work)
+
+```javascript
+// STEP 1: Check if Context7 MCP is available
+// Look for mcp__Context7__* tools in your environment
+
+// STEP 2: Retrieve latest documentation
+// For FlightPHP:
+mcp__Context7__get({key: "flightphp:docs:latest"})
+mcp__Context7__get({key: "flightphp:n8n-integration"})
+mcp__Context7__get({key: "flightphp:routing:patterns"})
+
+// For Bootstrap 5:
+mcp__Context7__get({key: "bootstrap:5:components"})
+mcp__Context7__get({key: "bootstrap:5:forms"})
+
+// For DataTables:
+mcp__Context7__get({key: "datatables:docs:latest"})
+
+// For n8n webhook integration:
+mcp__Context7__get({key: "n8n:webhooks:patterns"})
+mcp__Context7__get({key: "n8n:webhook-response-formats"})
+```
+
+### When to Query Context7
+
+| Phase | What to Retrieve | Key Pattern |
+|-------|------------------|-------------|
+| **Before Implementation** | FlightPHP routing, validation patterns | `flightphp:*` |
+| **Before UI Design** | Bootstrap components, form patterns | `bootstrap:5:*` |
+| **Before Results Display** | DataTables configuration, examples | `datatables:*` |
+| **Before Webhook Integration** | n8n webhook contracts, response handling | `n8n:webhooks:*` |
+
+### Fallback Strategy (If Context7 Unavailable)
+
+If `mcp__Context7__*` tools are NOT available:
+1. ⚠️ Log warning: "Context7 MCP not available - using embedded documentation"
+2. Proceed with embedded FlightPHP agent instructions
+3. Reference official documentation URLs directly
+4. **Document assumption**: "Using embedded docs - may not reflect latest FlightPHP/Bootstrap updates"
+
+### Integration with n8n-orchestrator
+
+**n8n-orchestrator** must:
+- ✅ Include Context7 check in FlightPHP sub-issues (Template 6)
+- ✅ Verify FlightPHP agent queried Context7 before implementation
+
+**Document Context7 retrieval status in all FlightPHP deliverables.**
+
+---
+
 ## 1. ROLE OF FLIGHTPHP-[AgentName] AGENTS
 
 Your specific responsibility with this prompt:
